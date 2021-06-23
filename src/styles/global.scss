@@ -1,0 +1,19 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+//Breakpoints
+$small: 500px;
+$medium: 800px;
+$large: 1150px;
+$MLarge: 1500px;
+$XLarge: 1920px;
+
+$background: #f0e7e7;
+@mixin breakpoint($value) {
+  @media screen and (min-width: $value) {
+    @content;
+  }
+}

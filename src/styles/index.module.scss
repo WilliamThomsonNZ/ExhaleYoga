@@ -1,0 +1,194 @@
+@import "./global.scss";
+
+body {
+  background: #f5f5f5;
+}
+
+.heroContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .heroTextContainer {
+    padding-left: 5%;
+    color: #f5f5f5;
+    .heroMainText {
+      font-family: "Lora", serif;
+      font-variant: normal;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 5rem;
+      line-height: 1.2;
+      margin: 1rem 0;
+      span {
+        font-style: italic;
+      }
+    }
+    .heroSubText {
+      font-family: "lato", sans-serif;
+      letter-spacing: 1px;
+      line-height: 1.6;
+      font-size: 0.75rem;
+      width: 75%;
+      margin: 1rem 0;
+      max-width: 350px;
+    }
+    .bookClassBtn {
+      background: none;
+      border: none;
+      text-transform: uppercase;
+      color: #f5f5f5;
+      margin: 2rem 0 1rem 2rem;
+      padding: 0;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 1px;
+        background-color: #f5f5f5;
+        left: -35px;
+        top: calc(50% - 1px);
+      }
+    }
+  }
+  .heroImageContainer {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    .heroImageOverlay {
+      height: 100%;
+      .heroImage {
+        height: 100%;
+
+        &:before {
+          background-color: rgba(0, 0, 0, 0.6);
+          content: "";
+          width: 100%;
+          position: absolute;
+          height: 100%;
+          z-index: 5;
+        }
+      }
+    }
+    .heroSubImage {
+      display: none;
+      position: absolute;
+      width: 350px;
+      height: 400px;
+      left: -200px;
+      bottom: -15%;
+      z-index: 5;
+    }
+  }
+
+  @include breakpoint($medium) {
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+
+    .heroImageContainer {
+      position: relative;
+      height: 60%;
+      width: 50%;
+      .heroImageOverlay {
+        .heroImage {
+          //border-radius: 200px;
+          //max-width: 450px;
+          height: 100%;
+          &:before {
+            background: none;
+          }
+        }
+      }
+    }
+    .heroTextContainer {
+      padding-left: 0;
+      color: #000;
+      .heroMainText {
+        span {
+        }
+      }
+      .heroSubText {
+      }
+      .bookClassBtn {
+        color: #000;
+        &::before {
+          background-color: #000;
+        }
+      }
+    }
+  }
+  @include breakpoint($large) {
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+
+    .heroImageContainer {
+      position: relative;
+      height: 60%;
+      width: 50%;
+      .heroImageOverlay {
+        .heroImage {
+          //border-radius: 200px;
+          //max-width: 450px;
+          height: 100%;
+          &:before {
+            background: none;
+          }
+        }
+      }
+    }
+    .heroTextContainer {
+      padding-left: 0;
+      color: #000;
+      .heroMainText {
+        font-size: 6.5rem;
+        span {
+        }
+      }
+      .heroSubText {
+        font-size: 0.9rem;
+      }
+      .bookClassBtn {
+        color: #000;
+        &::before {
+          background-color: #000;
+        }
+      }
+    }
+  }
+  @include breakpoint($MLarge) {
+    height: 90vh;
+    .heroImageContainer {
+      .heroSubImage {
+        display: block;
+      }
+    }
+  }
+  @include breakpoint($XLarge) {
+    max-width: 2000px;
+    margin: 0 auto;
+    justify-content: space-around;
+    .heroTextContainer {
+      padding-left: 0;
+      color: #000;
+      .heroMainText {
+        font-size: 8rem;
+      }
+    }
+    .heroImageContainer {
+      .heroImageOverlay {
+        text-align: right;
+        .heroImage {
+          max-width: 800px;
+        }
+      }
+      .heroSubImage {
+        left: -100px;
+      }
+    }
+  }
+}
