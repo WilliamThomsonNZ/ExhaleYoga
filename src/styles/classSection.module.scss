@@ -1,0 +1,237 @@
+@import "./global.scss";
+
+.container {
+  //height: 95vh;
+  width: 90%;
+  //min-height: 700px;
+  margin: 115px auto 0 auto;
+  position: relative;
+  .headingContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    .scrollWrapper {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+      flex-direction: row;
+      width: 200px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      .scrollTextOuterContainer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 993px;
+        height: 100%;
+        align-items: center;
+        .scrollTextContainer {
+          display: flex;
+          p {
+            font-family: "Lato";
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .heading {
+    font-family: "Lato";
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  .classContainer {
+    position: relative;
+    width: 100%;
+  }
+  .classLabelContainer {
+    padding-left: 0;
+    .offeredClass {
+      list-style: none;
+      margin: 20px 0;
+      transition: all 0.8s cubic-bezier(0.2, 0.6, 0.35, 1);
+      color: #000;
+      overflow: hidden;
+      padding-right: 15px;
+      font-size: 3.2rem;
+      font-weight: normal;
+      font-family: "Lora";
+      cursor: default;
+      position: relative;
+      cursor: pointer;
+      width: fit-content;
+      &.isHovering {
+        z-index: 10;
+      }
+      &.isNotHovering {
+        opacity: 0.3 !important;
+      }
+
+      .offeredClassIndex {
+        font-size: 14px;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+  }
+  .classImage {
+    position: absolute;
+    width: 225px;
+    height: auto;
+    top: 29%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  .classDescription {
+    right: 0;
+    bottom: 5%;
+    width: 250px;
+    font-size: 0.8rem;
+    font-family: "Lato";
+    line-height: 1.7;
+    margin-top: 75px;
+    background-color: #fff;
+    padding: 25px 25px 25px 5%;
+    margin-left: -5%;
+    //position: absolute;
+    .viewTimetable {
+      border: none;
+      background: none;
+      margin-top: 0.75rem;
+      padding: 0;
+      font-size: 0.8rem;
+      position: relative;
+      font-weight: bold;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #000;
+      color: #000;
+      .arrow {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  @include breakpoint($small) {
+    .classLabelContainer {
+      .offeredClass {
+        font-size: 3.7rem;
+      }
+    }
+    .classImage {
+      width: 250px;
+      //Override framer motion styling
+      // transform: translateX(50%) !important;
+    }
+  }
+  @include breakpoint(600px) {
+    margin-top: 15vw;
+  }
+  @include breakpoint($medium) {
+    .classLabelContainer {
+      .offeredClass {
+        font-size: 4rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .classContainer {
+      display: flex;
+      justify-content: space-between;
+      .classDescription {
+        align-self: flex-end;
+        margin-bottom: 10px;
+      }
+    }
+    .classImage {
+      width: 300px;
+      right: 50%;
+      top: 50%;
+      //Override framer motion styling
+      // transform: translateX(50%) !important;
+    }
+  }
+  @include breakpoint($large) {
+    max-width: 1500px;
+    .heading {
+      font-size: 1rem;
+    }
+    .headingContainer {
+      .scrollWrapper {
+        .scrollTextOuterContainer {
+          .scrollTextContainer {
+            p {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+    .classLabelContainer {
+      margin-top: 50px;
+      .offeredClass {
+      }
+    }
+    .classImage {
+      width: 400px;
+      right: 50%;
+      //Override framer motion styling
+      // transform: translateX(50%) !important;
+    }
+    .classDescription {
+      bottom: 140px;
+    }
+  }
+  @include breakpoint($MLarge) {
+    .classLabelContainer {
+      .offeredClass {
+        font-size: 5rem;
+        margin: 20px 0;
+      }
+    }
+    .classImage {
+      width: 500px;
+      right: 50%;
+      //Override framer motion styling
+      // transform: translateX(50%) !important;
+    }
+    .classDescription {
+      right: 0;
+      bottom: 5%;
+      width: 350px;
+      font-size: 1rem;
+      line-height: 2;
+    }
+  }
+  // @include breakpoint($XLarge) {
+  //   max-width: 1500px;
+  //   height: 100vh;
+  //   margin: 0 auto;
+  //   .classLabelContainer {
+  //     .offeredClass {
+  //       font-size: 7rem;
+  //     }
+  //   }
+  //   .classImage {
+  //     width: 500px;
+  //     right: 50%;
+  //     //Override framer motion styling
+  //     // transform: translateX(50%) !important;
+  //   }
+  //   .classDescription {
+  //     right: 0;
+  //     bottom: 5%;
+  //     width: 250px;
+  //     font-size: 0.8rem;
+  //     font-family: "Lato";
+  //     line-height: 1.7;
+  //     bottom: 100px;
+  //     position: absolute;
+  //   }
+  // }
+}

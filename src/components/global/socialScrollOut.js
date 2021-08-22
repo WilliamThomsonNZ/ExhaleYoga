@@ -31,6 +31,19 @@ const SocialScrollOut = () => {
     },
   }
 
+  const container = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        delay: 5,
+        duration: 1,
+      },
+    },
+  }
+
   return (
     <div className={styles.socialScrollOutContainer}>
       <div className={styles.socialWrapper}>
@@ -65,14 +78,19 @@ const SocialScrollOut = () => {
       <motion.button
         className={styles.socialButton}
         onClick={() => setSocialOpen(!socialOpen)}
-        variants={socialToggler}
-        animate={socialOpen ? "open" : "close"}
-        initial={false}
+        variants={container}
+        animate={"animate"}
+        initial={"initial"}
       >
-        <div className={styles.innerContainer}>
+        <motion.div
+          variants={socialToggler}
+          animate={socialOpen ? "open" : "close"}
+          initial={false}
+          className={styles.innerContainer}
+        >
           <span className={styles.upperSpan}></span>
           <span className={styles.lowerSpan}></span>
-        </div>
+        </motion.div>
       </motion.button>
     </div>
   )

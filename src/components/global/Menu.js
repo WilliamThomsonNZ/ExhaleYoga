@@ -13,8 +13,7 @@ const Menu = () => {
   const handleMenuToggle = e => {
     setMenuOpen(menuOpen => !menuOpen)
   }
-  //Need another set of variatns or options to go from open to close as we want a different animation.
-  //Can use animate presence here to animate the menu on and off
+
   const menuContainer = {
     open: {
       opacity: 1,
@@ -45,7 +44,10 @@ const Menu = () => {
     },
   }
   return (
-    <motion.div animate={menuOpen ? "open" : "closed"}>
+    <motion.div
+      animate={menuOpen ? "open" : "closed"}
+      className={styles.MenuToggleContainer}
+    >
       <MenuToggle handleToggle={handleMenuToggle} menuOpen={menuOpen} />
       <AnimatePresence>
         {menuOpen && (

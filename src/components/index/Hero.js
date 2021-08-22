@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import * as styles from "../../styles/index.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { motion } from "framer-motion"
@@ -6,84 +6,155 @@ import { StaticImage } from "gatsby-plugin-image"
 import BookClass from "./BookClass"
 import { Link } from "gatsby"
 import SocialScrollOut from "../global/socialScrollOut"
+import useWindowWidth from "../../utils/hooks/useWindowWidth"
+//Text animation
+
+const subContainer = {
+  animate: {
+    transition: {
+      delayChildren: 0.8,
+      staggerChildren: 1,
+    },
+  },
+}
+
+const AnimatedLetters = ({ title, isTopRow }) => {
+  const width = useWindowWidth(200)
+  let delay = width > 800 ? 4 : 2
+  const letterAni = {
+    initial: { y: 400 },
+    animate: {
+      y: 0,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 1,
+      },
+    },
+  }
+  const banner = {
+    animate: {
+      transition: {
+        //delayChildren: delay,
+        staggerChildren: 0.1,
+      },
+    },
+  }
+  return (
+    <motion.span
+      className={styles.rowTitle}
+      variants={banner}
+      initial="initial"
+      animate="animate"
+    >
+      {[...title].map((letter, index) => (
+        <motion.span
+          className={styles.rowLetter}
+          variants={letterAni}
+          key={index}
+        >
+          {letter}
+        </motion.span>
+      ))}
+      {isTopRow && (
+        <motion.span
+          className={`${styles.amp} ${styles.rowLetter}`}
+          variants={letterAni}
+        >
+          &nbsp;&amp;&nbsp;
+        </motion.span>
+      )}
+    </motion.span>
+  )
+}
+const handleSubHeroParalax = ref => {}
 const Hero = () => {
-  // const imageOverlayVariants = {
-  //   initial: {
-  //     width: "110%",
-  //     transition: { ease: [0.93, 0.04, 0.42, 1.01], duration: 0.8 },
-  //   },
-  //   end: {
-  //     width: 0,
-  //     transition: { ease: [0.93, 0.04, 0.42, 1.01], duration: 1.2, delay: 1 },
-  //   },
-  // }
-  // const imageVariants = {
-  //   initial: {
-  //     scale: 1.3,
-  //     transition: { ease: [0.93, 0.04, 0.42, 1.01], duration: 0.8 },
-  //   },
-  //   end: {
-  //     scale: 1,
-  //     transition: { ease: [0.93, 0.04, 0.42, 1.01], duration: 1.2, delay: 1 },
-  //   },
-  // }
+  const ref = useRef(null)
+  //Variants inside component so we can use hooks to deteremnine weather animation should run.
 
-  // const text = {
-  //   initial: {
-  //     y: "70px",
-  //     transition: { delay: 1.5 },
-  //   },
-  //   end: {
-  //     y: 0,
-  //     transition: { ease: [0.44, 0, 0.56, 1], delay: 1, duration: 1 },
-  //   },
-  // }
+  const heroImagesContainer = {
+    animate: {
+      transition: { staggerChildren: -0.375 },
+    },
+  }
 
-  // const textContainer = {
-  //   initial: {
-  //     transition: { staggerChildren: 0.15, delay: 1.2 },
-  //   },
-  //   end: {
-  //     transition: {
-  //       staggerChildren: 0.5,
-  //       delay: 1.5,
-  //       duration: 1.5,
-  //     },
-  //   },
-  // }
-
+  const button = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 1,
+        delay: 1,
+      },
+    },
+  }
   return (
     <>
-      <div className={styles.heroContainer}>
+      <div className={styles.heroContainer} data-scroll-section>
         <div className={styles.heroTextContainer}>
           <h1 className={styles.heroMainText}>
-            Space <span>&amp;</span>
-            <br />
-            Studio
+            <div className={styles.bannerRow}>
+              <AnimatedLetters title={"Space"} isTopRow />
+            </div>
+            <div className={styles.bannerRow}>
+              <AnimatedLetters title={"Studio"} />
+            </div>
           </h1>
-          <p className={styles.heroSubText}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque vitae imperdiet massa. Mauris et nisi semper, ultricies
-            arcu vel, suscipit quam.
-          </p>
-          <button className={styles.bookClassBtn}>Book class</button>
-        </div>
-        <div className={styles.heroImageContainer}>
-          <StaticImage
-            src="../../imgs/testSubHero.jpg"
-            alt="Exhale yoga studio"
-            className={styles.heroSubImage}
-          />
-          <div className={styles.heroImageOverlay}>
-            <StaticImage
-              src="../../imgs/testhero.jpg"
-              alt="Exhale yoga studio"
-              className={styles.heroImage}
-            />
-          </div>
+          <motion.div
+            variants={button}
+            initial={"initial"}
+            animate={"animate"}
+            className={styles.heroSubTextOuterContainer}
+          >
+            <div className={styles.subTextContainer}>
+              <motion.p className={styles.heroSubText}>
+                We are an urban sanctuary in the heart of Napier offering yoga
+                classes and workshops that put you and your wellbeing first.
+              </motion.p>
+            </div>
+            <motion.button className={styles.bookClassBtn}>
+              Book class <span className={styles.arrow}>&rarr;</span>
+            </motion.button>
+          </motion.div>
         </div>
       </div>
-      <SocialScrollOut />
+      <motion.div
+        //variants={heroImagesContainer}
+        animate={"animate"}
+        initial={"initial"}
+        className={styles.heroImageContainer}
+      >
+        <motion.div
+          //variants={imageContainer}
+          className={`${styles.heroImageAnimationContainer} ${styles.heroImageOverlay}`}
+        >
+          <motion.div
+            style={{ height: "100%", overflow: "hidden" }}
+            //variants={image}
+            transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1.6 }}
+            layoutId="main-image"
+          >
+            <StaticImage
+              src="../../imgs/heroimg.jpg"
+              alt="Exhale yoga studio"
+              className={styles.heroImage}
+              loading="eager"
+            />
+          </motion.div>
+        </motion.div>
+        <motion.div className={styles.subHeroImageContainer} ref={ref}>
+          <StaticImage
+            src="../../imgs/testSubHero.jpg"
+            alt="Woman in yoga studio"
+            className={styles.subHeroImage}
+            loading="eager"
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* <SocialScrollOut /> */}
     </>
   )
 }

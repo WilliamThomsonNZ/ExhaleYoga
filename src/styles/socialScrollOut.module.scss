@@ -3,8 +3,8 @@
 .socialScrollOutContainer {
   position: absolute;
   z-index: 11;
-  bottom: 5%;
-  right: 5%;
+  bottom: 50px;
+  right: 50px;
   .socialButton {
     background: #8b9187;
     width: 50px;
@@ -68,6 +68,7 @@
   .socialScrollOutContainer {
     z-index: 5;
     left: 100px;
+    bottom: 50px;
     right: unset;
 
     .socialButton {
@@ -90,12 +91,17 @@
       display: inline-block;
       overflow-x: hidden;
       vertical-align: middle;
-      margin-left: 15px;
+      margin-left: 30px;
       .textList {
+        padding: 0;
         .socialItem {
           display: inline-block;
-          &:not(:first-child) {
-            margin-left: 30px;
+          margin-left: 0;
+          &:not(:last-child) {
+            margin-right: 30px;
+            margin-top: 0;
+          }
+          &:last-child {
             margin-top: 0;
           }
           text-align: right;

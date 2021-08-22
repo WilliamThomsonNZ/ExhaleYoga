@@ -1,0 +1,75 @@
+@import "../../../styles/global.scss";
+
+.scrollWrapper {
+  margin-top: 115px;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 70vw;
+  .imageOuter {
+    overflow: hidden;
+    margin: 0 5vw;
+  }
+  .scrollInnerWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    .imageLandscape {
+      height: 50vw;
+      min-width: 50vw;
+    }
+    .imagePortrait {
+      height: 70vw;
+      min-width: 40vw;
+    }
+  }
+  @include breakpoint(600px) {
+    margin-top: 15vw;
+  }
+  @include breakpoint($medium) {
+    min-height: 50vw;
+    .imageContainer {
+      .imageLandscape {
+        height: 30vw;
+        min-width: 40vw;
+      }
+      .imagePortrait {
+        height: 50vw;
+        min-width: 30vw;
+      }
+    }
+  }
+  @include breakpoint($MLarge) {
+    min-height: 45vw;
+    .imageContainer {
+      .imageLandscape {
+        height: 25vw;
+        min-width: 35vw;
+      }
+      .imagePortrait {
+        height: 45vw;
+        min-width: 25vw;
+      }
+    }
+  }
+  @include breakpoint($XLarge) {
+    min-height: 40vw;
+    .imageContainer {
+      .imageLandscape {
+        height: 20vw;
+        min-width: 30vw;
+      }
+      .imagePortrait {
+        height: 40vw;
+        min-width: 20vw;
+      }
+    }
+  }
+}
