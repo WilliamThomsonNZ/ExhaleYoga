@@ -13,7 +13,7 @@ module.exports = {
       options: {
         fonts: [
           `Lora\:300,400i,400`,
-          `Lato`, // you can also specify font weights and styles
+          `Lato\:400,500`, // you can also specify font weights and styles
         ],
         display: "swap",
       },
@@ -27,5 +27,12 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/imgs/`,
+      },
+    },
   ],
 }
