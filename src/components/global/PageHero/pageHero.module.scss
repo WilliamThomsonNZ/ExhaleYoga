@@ -1,0 +1,70 @@
+@import "../../../styles/global.scss";
+
+.pageHeroContainer {
+  margin-top: calc(5% + 115px);
+  position: relative;
+  .content {
+    font-family: "Lora", Georgia, "Times New Roman", Times, serif;
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+  .contentContainer {
+    padding: 0 5%;
+  }
+  .mainImage {
+    height: 80vh;
+  }
+  .subImage {
+    display: none;
+  }
+  @include breakpoint($small) {
+    .content {
+      max-width: 70%;
+    }
+  }
+  @include breakpoint($medium) {
+    margin-top: 115px;
+    .content {
+      font-size: 35px;
+      max-width: 600px;
+      margin-bottom: 57px;
+    }
+  }
+  @include breakpoint($large) {
+    margin-top: 150px;
+    .contentContainer {
+      //max-width: 1500px;
+      margin: 0 auto;
+    }
+    .mainImage {
+      width: 70%;
+    }
+    .content {
+      font-size: 45px;
+      max-width: 900px;
+      margin-bottom: 100px;
+    }
+    .subImage {
+      display: block;
+      position: absolute;
+      right: 5%;
+      bottom: -200px;
+      width: 35vw;
+      height: calc(56.7vw);
+      max-width: 474px;
+      max-height: 600px;
+    }
+  }
+  @include breakpoint($XLarge) {
+    .subImage {
+      right: calc((100vw - 1500px) / 2);
+      bottom: -200px;
+    }
+    margin-top: 250px;
+    .content {
+      margin-bottom: 150px;
+      font-size: 3vw;
+      max-width: 60vw;
+    }
+  }
+}

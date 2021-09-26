@@ -3,7 +3,9 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
-
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   /* Your site config here */
   plugins: [
@@ -32,6 +34,14 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/imgs/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `43jaqv9y1hlx`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_DELIVERY_API,
       },
     },
   ],

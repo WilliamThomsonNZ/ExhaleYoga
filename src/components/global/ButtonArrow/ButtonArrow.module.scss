@@ -1,0 +1,52 @@
+@import "../../../styles/global.scss";
+.button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin-top: 0;
+  padding: 0;
+  font-size: 16px;
+  position: relative;
+  font-weight: 500;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #000;
+  &.whiteButton {
+    border-bottom: 1px solid #fff;
+  }
+  font-family: "Poppins", sans-serif;
+  color: inherit;
+  .arrowIcon {
+    font-size: 14px;
+    font-weight: lighter;
+    display: block;
+    transform: rotate(-90deg);
+    &:first-of-type {
+      margin-bottom: 10px;
+    }
+  }
+  &.footerButton {
+    display: inline-block;
+    border-bottom: none;
+    position: absolute;
+    right: -5px;
+    top: 10px;
+    padding: 5px;
+  }
+}
+.arrowContainer {
+  //   transform: rotate(45deg);
+  display: inline-block;
+  margin-left: 8px;
+  width: 16px;
+  height: 20px;
+  overflow: hidden;
+}
+@include breakpoint($medium) {
+  .button {
+    font-weight: 700;
+    font-size: 18px;
+    .arrowIcon {
+      font-size: 16px;
+    }
+  }
+}

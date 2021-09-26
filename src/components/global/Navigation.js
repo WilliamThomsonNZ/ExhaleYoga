@@ -6,8 +6,10 @@ const Navigation = () => {
   const menuItems = [
     { name: "Home", route: "/" },
     { name: "Timetable", route: "/time-table" },
+    { name: "Events", route: "/events" },
     { name: "Pricing", route: "/pricing" },
-    { name: "Team", route: "/meet-the-team" },
+    { name: "Team", route: "/our-team" },
+    { name: "Our Space", route: "/our-space" },
     { name: "Contact", route: "/contact" },
   ]
   const [hoverIndex, setHoverIndex] = useState(-1)

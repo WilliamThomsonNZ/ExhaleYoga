@@ -4,9 +4,10 @@ import NewsLetterSignUp from "./NewsLetterSignUp"
 import { motion } from "framer-motion"
 import Icon from "../../imgs/man.svg"
 import { Link } from "gatsby"
+import ButtonArrow from "./ButtonArrow/ButtonArrow"
 const Footer = () => {
   return (
-    <footer className={styles.container} data-scroll-section>
+    <footer className={styles.container}>
       <div className={styles.logoContainer}>
         <Icon className={styles.logo} />
         <motion.span className={styles.logoText}>EXHALE YOGA</motion.span>
@@ -26,7 +27,7 @@ const Footer = () => {
               type="email"
               placeholder="e-mail address here"
             />
-            <button className={styles.emailSignUpButton}>⟶</button>
+            <ButtonArrow label={""} isFooter={true} />
           </div>
         </form>
         <nav className={styles.contactDetailsContainer}>

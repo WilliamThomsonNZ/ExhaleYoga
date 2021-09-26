@@ -16,7 +16,7 @@
     .title {
       font-weight: 500;
       font-size: 0.75rem;
-      font-family: "Lato";
+      font-family: "Poppins";
       margin: 0;
     }
     .loadingBarOuter {
@@ -72,16 +72,18 @@
       }
       .reviewAuthorContainer {
         margin-top: 5px;
-        height: 15px;
+        height: 18px;
         overflow: hidden;
         position: relative;
         .reviewAuthorInnerContainer {
+          height: fit-content;
           display: flex;
           flex-direction: column;
           .reviewAuthor {
-            font-family: "lato";
+            font-family: "Poppins";
             font-size: 0.75rem;
             margin-left: 20px;
+            font-weight: 500;
             &:first-child {
               margin-top: 0;
             }
@@ -93,17 +95,18 @@
       }
     }
     .reviewIndexContainer {
-      font-family: "lato";
+      font-family: "Poppins";
       font-size: 0.75rem;
       margin-right: 5%;
       display: flex;
+      font-weight: 500;
       margin-top: 5px;
       height: 15px;
       overflow: hidden;
       .reviewIndexInnerContainer {
         display: flex;
         flex-direction: column;
-        height: 64px;
+        height: fit-content;
         justify-content: space-between;
       }
 
@@ -141,9 +144,8 @@
           }
         }
         .reviewAuthorContainer {
-          height: 20px;
+          height: 23px;
           .reviewAuthorInnerContainer {
-            height: 80px;
             justify-content: space-between;
             .reviewAuthor {
               font-size: 0.95rem;
@@ -155,7 +157,6 @@
         font-size: 0.95rem;
         height: 20px;
         .reviewIndexInnerContainer {
-          height: 75px;
           justify-content: space-between;
         }
       }
@@ -178,7 +179,7 @@
     .heading {
       //margin-bottom: 5.5rem;
       .title {
-        font-size: 1.2rem;
+        font-size: 18px;
       }
       .loadingBarOuter {
         width: 200px;
@@ -196,9 +197,8 @@
         .reviewAuthorContainer {
           height: 25px;
           .reviewAuthorInnerContainer {
-            height: 95px;
             .reviewAuthor {
-              font-size: 1.2rem;
+              font-size: 18px;
             }
           }
         }
@@ -207,9 +207,6 @@
         height: 25px;
         font-size: 1.2rem;
         margin-right: 0;
-        .reviewIndexInnerContainer {
-          height: 95px;
-        }
       }
     }
     .reviewsContainer {

@@ -41,19 +41,6 @@ const Header = () => {
         animate={"show"}
         className={styles.header}
       >
-        <nav className={styles.desktopNavigationContainer}>
-          <ul className={styles.desktopNavigationItems}>
-            <li className={styles.navigationItem}>
-              <Link path="#">Home</Link>
-            </li>
-            <li className={styles.navigationItem}>
-              <Link path="#">Events</Link>
-            </li>
-            <li className={styles.navigationItem}>
-              <Link path="#">Timetable</Link>
-            </li>
-          </ul>
-        </nav>
         <motion.div className={styles.logoContainer}>
           <Link to={"/"} className={styles.logo}>
             <Icon className={styles.logoSvg} />
@@ -65,11 +52,31 @@ const Header = () => {
         <nav className={styles.desktopNavigationContainer}>
           <ul className={styles.desktopNavigationItems}>
             <li className={styles.navigationItem}>
-              <Link path="#">Pricing</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className={styles.navigationItem}>
-              <Link path="#">Contact</Link>
+              <Link to="/time-table">Timetable</Link>
             </li>
+            <li className={styles.navigationItem}>
+              <Link to="/events">Events</Link>
+            </li>
+            <li className={styles.navigationItem}>
+              <Link to="/pricing">Pricing</Link>
+            </li>
+            <li className={styles.navigationItem}>
+              <Link to="/our-team">Team</Link>
+            </li>
+            <li className={styles.navigationItem}>
+              <Link to="/our-space">Our Space</Link>
+            </li>
+            <li className={styles.navigationItem}>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <nav className={styles.desktopNavigationContainer}>
+          <ul className={styles.desktopNavigationItems}>
             <Link
               to="/pricing"
               className={`${styles.navigationItem} ${styles.introductoryNavItem}`}

@@ -1,35 +1,9 @@
 import { motion } from "framer-motion"
 import React, { useState } from "react"
 import * as styles from "../../styles/testimonials.module.scss"
-const Testimonials = () => {
+const Testimonials = ({ data }) => {
   //TODO:need to pull reviews in from contentful
-
-  const reviews = [
-    {
-      id: 1,
-      author: "James Fig",
-      review:
-        "A small but lovely studio taking inspiration from Bali with plants and decorative cushions, Ivy Studio is located on the upper floor of Monday Cafe and Bar in Kingsland, Auckland.",
-    },
-    {
-      id: 2,
-      author: "Jane Doe",
-      review:
-        "As I embark on the seemingly impossible task of trying to replace Olivia Marley, I realise just how lucky I was to find such.",
-    },
-    {
-      id: 3,
-      author: "Kate King",
-      review:
-        "A small but lovely studio taking inspiration from Bali with plants and decorative cushions, Ivy Studio is located on the upper floor of Monday Cafe and Bar in Kingsland, Auckland.",
-    },
-    {
-      id: 4,
-      author: "Tom Tether",
-      review:
-        "As I embark on the seemingly impossible task of trying to replace Olivia Marley, I realise just how lucky I was to find such.",
-    },
-  ]
+  const reviews = data.allContentfulReview.edges
   const [lastClick, setLastClick] = useState("")
   const [authorYHeight, setAuthorYHeight] = useState(0)
   const [reviewScrollProgress, setReviewScrollProgress] = useState(0)
@@ -100,7 +74,7 @@ const Testimonials = () => {
     },
   }
   return (
-    <section className={styles.sectionContainer} data-scroll-section>
+    <section className={styles.sectionContainer}>
       <div className={styles.heading}>
         <h2 className={styles.title}>What our vistors have to say.</h2>
         <div className={styles.loadingBarOuter}>
@@ -122,10 +96,11 @@ const Testimonials = () => {
           {reviews.map((review, index) => (
             <div
               className={`${styles.review} ${
-                currentIndex == review.id - 1 ? styles.reviewInView : undefined
+                currentIndex == index ? styles.reviewInView : undefined
               }`}
+              key={review.node.id}
             >
-              “{review.review}”
+              “{review.node.reviewBody.reviewBody}”
             </div>
           ))}
         </motion.div>
@@ -144,8 +119,8 @@ const Testimonials = () => {
               initial={false}
             >
               {reviews.map(review => (
-                <span className={styles.reviewAuthor} key={review.id}>
-                  {review.author}
+                <span className={styles.reviewAuthor} key={review.node.id}>
+                  {review.node.reviewAuthor}
                 </span>
               ))}
             </motion.div>
@@ -158,13 +133,16 @@ const Testimonials = () => {
             animate={lastClick === "prev" ? "prev" : "next"}
             initial={false}
           >
-            {reviews.map(review => (
+            {reviews.map((review, index) => (
               <span className={styles.reviewIndex}>
-                {review.key > 9 ? review.id : `0${review.id}`}&nbsp;
+                {index + 1 > 9 ? index : `0${index + 1}`}&nbsp;
               </span>
             ))}
           </motion.div>
-          <span className={styles.reviewTotal}> - 04</span>
+          <span className={styles.reviewTotal}>
+            {" "}
+            - {reviews.length > 9 ? reviews.length : `0${reviews.length}`}
+          </span>
         </div>
       </div>
     </section>

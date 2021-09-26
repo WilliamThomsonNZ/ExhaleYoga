@@ -1,0 +1,77 @@
+@import "./global.scss";
+.pageContent {
+  padding: 0 5%;
+  margin-top: 115px;
+  .contactButton {
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-top: 0.75rem;
+    padding: 0;
+    font-size: 0.8rem;
+    position: relative;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000;
+    color: #000;
+    .arrowIcon {
+      margin-left: 10px;
+      font-size: 14px;
+      font-weight: lighter;
+      transform: rotate(-45deg);
+    }
+  }
+  .title {
+    font-family: "Lora";
+    font-weight: normal;
+    font-size: 26px;
+  }
+  p {
+    font-family: "Lato";
+    font-size: 14px;
+    letter-spacing: normal;
+    line-height: 1.7;
+  }
+}
+@include breakpoint(600px) {
+  .pageContent {
+    margin-top: 15vw;
+  }
+}
+@include breakpoint($medium) {
+  .pageContainer {
+    display: flex;
+    align-items: center;
+  }
+  .pageContent {
+    width: 90%;
+    .title {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 16px;
+    }
+    .contactButton {
+      font-size: 16px;
+      .arrowIcon {
+        font-size: 15px;
+      }
+    }
+  }
+}
+@include breakpoint(1500px) {
+  .pageContent {
+    padding-left: 0;
+    margin-left: calc((100vw - 1500px) / 2);
+  }
+}
+@include breakpoint($XLarge) {
+  .pageContent {
+    .title {
+      font-size: 2.7rem;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+}

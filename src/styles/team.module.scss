@@ -1,0 +1,52 @@
+@import "./global.scss";
+.teamMissionStatement {
+  padding: 0 5%;
+  margin-top: 115px;
+  .content {
+    font-family: "Lora";
+    font-size: 20px;
+    line-height: 1.7;
+  }
+}
+.imagesContainer {
+  margin-top: 115px;
+  padding: 0 5%;
+}
+
+@include breakpoint(600px) {
+  .teamMissionStatement {
+    margin-top: 15vw;
+    .content {
+      font-size: 22px;
+    }
+  }
+  .imagesContainer {
+    margin-top: 15vw;
+  }
+}
+
+@include breakpoint($medium) {
+  .teamMissionStatement {
+    .content {
+      font-size: 22px;
+    }
+  }
+}
+
+@include breakpoint($large) {
+  .teamMissionStatement {
+    width: 60%;
+    .content {
+      font-size: 2rem;
+    }
+  }
+}
+@include breakpoint($XLarge) {
+  .teamMissionStatement {
+    max-width: 1000px;
+    padding-left: calc((100vw - 1500px) / 2);
+    .content {
+      font-size: 2.5rem;
+    }
+  }
+}

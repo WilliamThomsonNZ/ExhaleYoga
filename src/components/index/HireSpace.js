@@ -1,12 +1,13 @@
 import React from "react"
 import * as styles from "../../styles/hireSpace.module.scss"
 import { StaticImage } from "gatsby-plugin-image"
+import ButtonArrow from "../global/ButtonArrow/ButtonArrow"
 const HireSpace = () => {
   return (
-    <div className={styles.container} data-scroll-section>
+    <div className={styles.container}>
       <div className={styles.imageContainer}>
         <StaticImage
-          src="../../imgs/hireSpace.jpg"
+          src="../../imgs/3.jpg"
           alt="Exhale yoga studio"
           className={styles.image}
           loading="lazy"
@@ -21,13 +22,9 @@ const HireSpace = () => {
             Located in the very heart of Sanur you will find our Spa and Yoga
             Shala nestled down a banana palm-lined avenue. Once you enter the
             gate you will feel the peaceful vibration. Fluid, continuous and
-            flowing with breath. The Vinyasa flow deepens and stokes your inner
-            fire, strengthens the body and expands your inner self with knowing
-            and clarity
+            flowing with breath.
           </p>
-          <button className={styles.moreInfo}>
-            More Information <span className={styles.arrow}>&rarr;</span>
-          </button>
+          <ButtonArrow label={"More information"} />
         </div>
       </div>
     </div>

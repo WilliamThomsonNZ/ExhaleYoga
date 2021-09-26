@@ -1,0 +1,90 @@
+@import "../../../styles/global.scss";
+
+.container {
+  margin-top: 115px;
+  padding: 0 5%;
+}
+
+.textContent {
+  font-size: 24px;
+  font-weight: normal;
+  font-family: "Lora";
+  line-height: 1.4;
+}
+.classTileContainer {
+  margin-top: 55px;
+}
+.classTile {
+  position: relative;
+  color: #fff;
+  margin-bottom: 25px;
+  .index {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 2;
+  }
+  &::after {
+    background-color: rgba(0, 0, 0, 0.3);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+  .tileTitle {
+    margin: 0;
+    z-index: 2;
+    font-weight: normal;
+    font-size: 40px;
+    transform-origin: 0% 0%;
+  }
+  .tileInformation {
+    font-family: "Poppins";
+    z-index: 2;
+    font-size: 14px;
+    line-height: 1.7;
+    width: 80%;
+    span {
+      margin-bottom: 10px;
+      display: block;
+    }
+  }
+  .tileContent {
+    padding: 5%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
+}
+
+.tileImage {
+  aspect-ratio: 4/6;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: opacity(20%);
+}
+@include breakpoint(600px) {
+  .container {
+    margin-top: 15vw;
+  }
+}
+@include breakpoint($medium) {
+  .classTileContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .classTile {
+    width: 50%;
+  }
+}
+@include breakpoint($large) {
+  .classTileContainer {
+    flex-wrap: nowrap;
+  }
+  .container {
+    padding: 0;
+  }
+}

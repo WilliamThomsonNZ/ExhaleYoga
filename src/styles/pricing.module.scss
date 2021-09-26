@@ -1,0 +1,252 @@
+@import "./global.scss";
+
+.pageContainer {
+  padding: 0 8%;
+  section {
+    margin-top: 115px;
+  }
+}
+
+.bookButton {
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin-top: 0;
+  padding: 0;
+  font-size: 16px;
+  position: relative;
+  font-weight: 500;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #000;
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  .arrowIcon {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: lighter;
+    transform: rotate(-45deg);
+  }
+}
+.introContent {
+  .introCopy {
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.7;
+  }
+}
+.pricingImage {
+  margin-top: 115px;
+}
+
+.pricingTitle {
+  font-family: "Lora";
+  font-weight: normal;
+  font-size: 25px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.membershipTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  &:last-of-type {
+    margin-top: 20px;
+  }
+  &:first-of-type {
+    margin-top: 40px;
+  }
+}
+.membershipCopy {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.7;
+}
+
+.tableContent {
+  margin-top: 115px;
+}
+.priceList {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    margin-top: 7px;
+    &:nth-child(4) {
+      margin-top: 20px;
+    }
+  }
+  .title {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+@include breakpoint(600px) {
+  .tableContent {
+    margin-top: 15vw;
+  }
+
+  .pageContainer {
+    padding: 0 5%;
+    section {
+      margin-top: 15vw;
+    }
+  }
+  .pricingImage {
+    margin-top: 15vw;
+  }
+}
+
+@include breakpoint($medium) {
+  .introOfferContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    .introContent {
+      width: 50%;
+      padding-left: 50px;
+      .introCopy {
+        font-size: 15px;
+        line-height: 1.85;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .pricingImage {
+    margin-top: 0;
+    width: 50%;
+    max-height: 500px;
+  }
+  .pricingTitle {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .membershipsWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7vw;
+    .membership {
+      width: 40%;
+    }
+    .membershipTitle {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 0;
+    }
+    .membershipCopy {
+      font-size: 15px;
+      line-height: 1.85;
+    }
+  }
+
+  .pricingTableContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    .pricingTableImage {
+      width: 50%;
+      max-height: 500px;
+    }
+    .tableContent {
+      width: 50%;
+      padding-right: 50px;
+      margin-top: 0;
+    }
+    li {
+      font-size: 15px;
+      &:nth-child(4) {
+        margin-top: 30px;
+      }
+    }
+    .title {
+      font-size: 18px;
+    }
+  }
+  .priceList {
+    margin-bottom: 30px;
+  }
+}
+
+@include breakpoint($MLarge) {
+  .introOfferContainer,
+  .membershipContainer,
+  .pricingTableContainer {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+  .introOfferContainer {
+    .introContent {
+      padding-left: 100px;
+      .introCopy {
+        font-size: 17px;
+        line-height: 1.9;
+        margin-bottom: 40px;
+      }
+    }
+  }
+  .pricingTitle {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    line-height: 1.7;
+  }
+  .bookButton {
+    font-size: 20px;
+    .arrowIcon {
+      font-size: 15px;
+    }
+  }
+  .pricingImage {
+    max-height: 800px;
+  }
+  .membershipsWrapper {
+    .membershipTitle {
+      font-family: "Poppins", sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      margin-top: 0;
+    }
+    .membershipCopy {
+      font-size: 17px;
+      line-height: 1.9;
+    }
+  }
+  .pricingTableContainer {
+    .pricingTableImage {
+      width: 50%;
+      max-height: 800px;
+    }
+    .tableContent {
+      width: 50%;
+      padding-right: 100px;
+      margin-top: 0;
+    }
+    li {
+      font-size: 17px;
+      &:nth-child(4) {
+        margin-top: 40px;
+      }
+    }
+    .title {
+      font-size: 22px;
+    }
+  }
+  .priceList {
+    margin-bottom: 40px;
+  }
+}

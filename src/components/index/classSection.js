@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import image from "../../imgs/testhero.jpg"
 import OfferedClass from "./offeredClass"
 import useWindowWidth from "../../utils/hooks/useWindowWidth"
-
+import ButtonArrow from "../global/ButtonArrow/ButtonArrow"
 const ClassSection = () => {
   //Have an index of currently hovering or clicked class
   //pull the id of each class and then we can update the hover index
@@ -120,7 +120,7 @@ const ClassSection = () => {
   }
   return (
     <>
-      <motion.div className={styles.container} data-scroll-section>
+      <motion.div className={styles.container}>
         <div className={styles.headingContainer}>
           <motion.h2 className={styles.heading}>
             Classes we offer at Exhale Yoga
@@ -177,9 +177,7 @@ const ClassSection = () => {
                 exit={"exit"}
               >
                 {classes[currentIndex].description}
-                <button className={styles.viewTimetable}>
-                  View timetable <span className={styles.arrow}>&rarr;</span>
-                </button>
+                <ButtonArrow label={"View timetable"} />
               </motion.div>
             )}
           </AnimatePresence>

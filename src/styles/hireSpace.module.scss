@@ -13,22 +13,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 4rem;
+    //padding-top: 4rem;
     .textInnerContainer {
       width: 90%;
       .title {
         margin-top: 0;
         font-weight: normal;
         font-family: "Lora";
-        letter-spacing: 1px;
-        font-size: 1.5rem;
+        font-size: 25px;
         margin-bottom: 1rem;
       }
       .textContent {
-        font-family: "Lato";
-        font-size: 0.8rem;
+        font-family: "Poppins";
+        font-size: 15px;
 
-        line-height: 1.7;
+        line-height: 1.6;
         margin-bottom: 1rem;
         margin-top: 0;
       }
@@ -91,13 +90,13 @@
           font-size: 2.5rem;
         }
         .textContent {
-          font-size: 1rem;
+          font-size: 18px;
           margin-top: 2rem;
           margin-bottom: 2rem;
           line-height: 2;
         }
         .moreInfo {
-          font-size: 1rem;
+          font-size: 18px;
           border-bottom: 2px solid #000;
           .arrow {
             font-size: 1.6rem;

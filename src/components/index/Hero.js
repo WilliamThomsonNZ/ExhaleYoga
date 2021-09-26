@@ -7,6 +7,7 @@ import BookClass from "./BookClass"
 import { Link } from "gatsby"
 import SocialScrollOut from "../global/socialScrollOut"
 import useWindowWidth from "../../utils/hooks/useWindowWidth"
+import ButtonArrow from "../global/ButtonArrow/ButtonArrow"
 //Text animation
 
 const subContainer = {
@@ -18,16 +19,17 @@ const subContainer = {
   },
 }
 
-const AnimatedLetters = ({ title, isTopRow }) => {
+export const AnimatedLetters = ({ title, isTopRow }) => {
   const width = useWindowWidth(200)
-  let delay = width > 800 ? 4 : 2
+  let delay = 2
   const letterAni = {
-    initial: { y: 400 },
+    initial: { y: 100, opacity: 0 },
     animate: {
       y: 0,
+      opacity: 1,
       transition: {
-        ease: [0.6, 0.01, -0.05, 0.95],
-        duration: 1,
+        ease: [0.405, 0, 0.025, 1],
+        duration: 0.7,
       },
     },
   }
@@ -35,7 +37,7 @@ const AnimatedLetters = ({ title, isTopRow }) => {
     animate: {
       transition: {
         //delayChildren: delay,
-        staggerChildren: 0.1,
+        staggerChildren: 0.08,
       },
     },
   }
@@ -92,7 +94,7 @@ const Hero = () => {
   }
   return (
     <>
-      <div className={styles.heroContainer} data-scroll-section>
+      <div className={styles.heroContainer}>
         <div className={styles.heroTextContainer}>
           <h1 className={styles.heroMainText}>
             <div className={styles.bannerRow}>
@@ -114,9 +116,7 @@ const Hero = () => {
                 classes and workshops that put you and your wellbeing first.
               </motion.p>
             </div>
-            <motion.button className={styles.bookClassBtn}>
-              Book class <span className={styles.arrow}>&rarr;</span>
-            </motion.button>
+            <ButtonArrow label={"Book class"} />
           </motion.div>
         </div>
       </div>
@@ -137,10 +137,9 @@ const Hero = () => {
             layoutId="main-image"
           >
             <StaticImage
-              src="../../imgs/heroimg.jpg"
+              src="../../imgs/heroMain.jpg"
               alt="Exhale yoga studio"
               className={styles.heroImage}
-              loading="eager"
             />
           </motion.div>
         </motion.div>
