@@ -2,8 +2,8 @@
 .sectionContainer {
   //height: 100vh;
   margin-top: 115px;
-  width: 95%;
-  margin-left: 5%;
+  width: 92%;
+  margin-left: 8%;
   margin-right: 0;
   overflow: hidden;
   .heading {
@@ -15,16 +15,17 @@
     max-width: 1500px;
     .title {
       font-weight: 500;
-      font-size: 0.75rem;
+      font-size: 15px;
       font-family: "Poppins";
       margin: 0;
     }
     .loadingBarOuter {
-      width: 100px;
+      width: 80px;
       height: 2px;
       background: #d6d6d6;
       border-radius: 15px;
-      margin-right: 5%;
+      margin-right: 8%;
+      display: none;
       .loadingBarInner {
         width: 25%;
         height: 100%;
@@ -44,7 +45,7 @@
     }
     .review {
       min-width: 75%;
-      font-size: 1rem;
+      font-size: 25px;
       line-height: 1.7;
       margin-right: 5%;
       opacity: 0.3;
@@ -72,7 +73,7 @@
       }
       .reviewAuthorContainer {
         margin-top: 5px;
-        height: 18px;
+        height: 21px;
         overflow: hidden;
         position: relative;
         .reviewAuthorInnerContainer {
@@ -81,7 +82,7 @@
           flex-direction: column;
           .reviewAuthor {
             font-family: "Poppins";
-            font-size: 0.75rem;
+            font-size: 15px;
             margin-left: 20px;
             font-weight: 500;
             &:first-child {
@@ -96,12 +97,12 @@
     }
     .reviewIndexContainer {
       font-family: "Poppins";
-      font-size: 0.75rem;
-      margin-right: 5%;
+      font-size: 15px;
+      margin-right: 8%;
       display: flex;
       font-weight: 500;
       margin-top: 5px;
-      height: 15px;
+      height: 20px;
       overflow: hidden;
       .reviewIndexInnerContainer {
         display: flex;

@@ -8,28 +8,20 @@ import ImageSlider from "../components/global/ImageSlider/ImageSlider"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import PricingContent from "../components/PricingContent"
+import Footer from "../components/global/Footer"
 
 const Pricing = ({ data }) => {
   const heroContent =
     "Our space is avaliable to hire for functions and workshops."
   const containerRef = useRef(null)
   return (
-    <LocomotiveScrollProvider
-      options={{ smooth: true }}
-      containerRef={containerRef}
-    >
-      <div data-scroll-container ref={containerRef}>
-        <div data-scroll-section>
-          <Layout>
-            <PageHero content={heroContent} container={containerRef.current} />
-            <div className={styles.pageContainer}>
-              <PricingContent />
-            </div>
-            <ImageSlider data={data} />
-          </Layout>
-        </div>
+    <Layout>
+      <PageHero content={heroContent} container={containerRef.current} />
+      <div className={styles.pageContainer}>
+        <PricingContent />
       </div>
-    </LocomotiveScrollProvider>
+      <ImageSlider data={data} />
+    </Layout>
   )
 }
 export const query = graphql`

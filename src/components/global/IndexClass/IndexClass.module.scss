@@ -2,7 +2,7 @@
 
 .container {
   margin-top: 115px;
-  padding: 0 5%;
+  // padding: 0 8%;
 }
 
 .textContent {
@@ -10,14 +10,16 @@
   font-weight: normal;
   font-family: "Lora";
   line-height: 1.4;
+  padding: 0 8%;
+  position: relative;
 }
 .classTileContainer {
-  margin-top: 55px;
+  margin-top: 115px;
 }
 .classTile {
   position: relative;
   color: #fff;
-  margin-bottom: 25px;
+  // margin-bottom: 30px;
   .index {
     position: absolute;
     right: 15px;
@@ -60,14 +62,23 @@
     z-index: 2;
   }
 }
+.rotateSvg {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  right: 5%;
+  transform-origin: center center !important;
+  bottom: -85px;
+}
 
 .tileImage {
-  aspect-ratio: 4/6;
+  aspect-ratio: 5/6;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: opacity(20%);
 }
 @include breakpoint(600px) {
-  .container {
+  .container,
+  .classTileContainer {
     margin-top: 15vw;
   }
 }
@@ -79,6 +90,12 @@
   .classTile {
     width: 50%;
   }
+  .rotateSvg {
+    bottom: -100px;
+  }
+  .textContent {
+    padding: 0 5%;
+  }
 }
 @include breakpoint($large) {
   .classTileContainer {
@@ -86,5 +103,28 @@
   }
   .container {
     padding: 0;
+    position: relative;
+  }
+  .tileImage {
+    aspect-ratio: 4/6;
+  }
+  .textContent {
+    font-size: 35px;
+    width: 90%;
+    line-height: 1.7;
+    position: static;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .rotateSvg {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    right: 8%;
+  }
+}
+@include breakpoint($MLarge) {
+  .textContent {
+    font-size: 45px;
   }
 }

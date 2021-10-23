@@ -6,13 +6,13 @@ import Icon from "../../imgs/man.svg"
 import useWindowWidth from "../../utils/hooks/useWindowWidth"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-
-const Header = () => {
+import MenuToggle from "./MenuToggle"
+const Header = ({ handleMenuToggle, menuOpen }) => {
   const headerVariants = {
-    initial: { opacity: 0 },
+    initial: { opacity: 0, y: -50 },
     show: {
       opacity: 1,
-      // y: 0,
+      y: 0,
       transition: {
         ease: [0.6, 0.01, -0.05, 0.95],
         duration: 1.6,
@@ -85,7 +85,8 @@ const Header = () => {
             </Link>
           </ul>
         </nav>
-        <Menu />
+        <MenuToggle handleToggle={handleMenuToggle} menuOpen={menuOpen} />
+        {/* <Menu /> */}
       </motion.header>
     </>
   )

@@ -22,7 +22,8 @@ const HireSpace = () => {
             Located in the very heart of Sanur you will find our Spa and Yoga
             Shala nestled down a banana palm-lined avenue. Once you enter the
             gate you will feel the peaceful vibration. Fluid, continuous and
-            flowing with breath.
+            flowing with breath. Located in the very heart of Sanur you will
+            find our Spa and Yoga Shala nestled down a banana palm-lined avenue.
           </p>
           <ButtonArrow label={"More information"} />
         </div>

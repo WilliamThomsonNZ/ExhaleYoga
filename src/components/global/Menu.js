@@ -7,13 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import Navigation from "./Navigation"
 import Icon from "../../imgs/menuWave.svg"
 
-const Menu = () => {
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  const handleMenuToggle = e => {
-    setMenuOpen(menuOpen => !menuOpen)
-  }
-
+const Menu = ({ menuOpen, setMenuOpen }) => {
   const menuContainer = {
     open: {
       opacity: 1,
@@ -48,49 +42,16 @@ const Menu = () => {
       animate={menuOpen ? "open" : "closed"}
       className={styles.MenuToggleContainer}
     >
-      <MenuToggle handleToggle={handleMenuToggle} menuOpen={menuOpen} />
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            className={styles.menuContainer}
-            key="menuContainer"
-            variants={menuContainer}
-            initial="closed"
-            animate="open"
-            exit="closed"
-          >
-            <Navigation />
-            <div className={styles.socialsContainer}>
-              <div className={styles.socialLinkContainer}>
-                <motion.a href="#" variants={contactItem}>
-                  Mind Body
-                  <Icon className={styles.menuIcon} />
-                </motion.a>
-              </div>
-              <div className={styles.socialLinkContainer}>
-                <motion.a href="#" variants={contactItem}>
-                  Instagram <Icon className={styles.menuIcon} />
-                </motion.a>
-              </div>
-              <div className={styles.socialLinkContainer}>
-                <motion.a href="#" variants={contactItem}>
-                  Facebook <Icon className={styles.menuIcon} />
-                </motion.a>
-              </div>
-              <div className={styles.contactLinkContainer}>
-                <motion.a href="#" variants={contactItem}>
-                  team@exhaleyoga.co.nz
-                </motion.a>
-              </div>
-              <div className={styles.contactLinkContainer}>
-                <motion.a href="#" variants={contactItem}>
-                  +64 27 5554029
-                </motion.a>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        className={styles.menuContainer}
+        key="menuContainer"
+        variants={menuContainer}
+        initial="closed"
+        animate="open"
+        exit="closed"
+      >
+        <Navigation setMenuOpen={setMenuOpen} />
+      </motion.div>
     </motion.div>
   )
 }

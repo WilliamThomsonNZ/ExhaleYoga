@@ -14,40 +14,30 @@ const OurTeam = ({ data }) => {
     "Our space is avaliable to hire for functions and workshops."
   const containerRef = useRef(null)
   return (
-    <LocomotiveScrollProvider
-      options={{ smooth: true }}
-      containerRef={containerRef}
-    >
-      <div data-scroll-container ref={containerRef}>
-        <div data-scroll-section>
-          <Layout>
-            <PageHero content={heroContent} container={containerRef.current} />
-            <div className={styles.pageContainer}>
-              <section className={styles.pageContent}>
-                <h2 className={styles.title}>
-                  Our space is avaliable to hire for functions and workshops.
-                </h2>
-                <p>
-                  The studio is influenced by the natural beauty of New Zealand.
-                  We encourage you to bring your practice to the great outdoors
-                  close to Hobsonville and West Auckland: Catalina Bay, around
-                  the Auckland harbour, Waitakere Ranges, or the stunning West
-                  Coast beaches.
-                </p>
-                <p>
-                  Our yoga studio is located on the ground floor, and is
-                  wheel-chair accessible (wide doors at entry and in restroom)
-                  Please reach out if you'll be joining our class and need extra
-                  support and we're happy to arrange this for you.
-                </p>
-                <ButtonArrow label={"Get in touch"} />
-              </section>
-              <ImageSlider data={data} />
-            </div>
-          </Layout>
-        </div>
+    <Layout>
+      <PageHero content={heroContent} container={containerRef.current} />
+      <div className={styles.pageContainer}>
+        <section className={styles.pageContent}>
+          <h2 className={styles.title}>
+            Our space is avaliable to hire for functions and workshops.
+          </h2>
+          <p>
+            The studio is influenced by the natural beauty of New Zealand. We
+            encourage you to bring your practice to the great outdoors close to
+            Hobsonville and West Auckland: Catalina Bay, around the Auckland
+            harbour, Waitakere Ranges, or the stunning West Coast beaches.
+          </p>
+          <p>
+            Our yoga studio is located on the ground floor, and is wheel-chair
+            accessible (wide doors at entry and in restroom) Please reach out if
+            you'll be joining our class and need extra support and we're happy
+            to arrange this for you.
+          </p>
+          <ButtonArrow label={"Get in touch"} />
+        </section>
+        <ImageSlider data={data} />
       </div>
-    </LocomotiveScrollProvider>
+    </Layout>
   )
 }
 

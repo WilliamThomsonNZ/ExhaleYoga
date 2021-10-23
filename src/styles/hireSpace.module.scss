@@ -2,26 +2,29 @@
 .container {
   width: 100%;
   margin-top: 115px;
+  display: flex;
+  flex-direction: column-reverse;
   .imageContainer {
+    margin-top: 115px;
+    padding: 0 8%;
     img {
       min-height: 300px;
     }
   }
   .textContainer {
-    width: 100%;
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 8%;
     //padding-top: 4rem;
     .textInnerContainer {
-      width: 90%;
       .title {
         margin-top: 0;
         font-weight: normal;
         font-family: "Lora";
         font-size: 25px;
-        margin-bottom: 1rem;
+        margin-bottom: 20px;
       }
       .textContent {
         font-family: "Poppins";
@@ -53,8 +56,18 @@
   }
   @include breakpoint($medium) {
     display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+    width: 90%;
+    .image {
+      max-height: 85vh;
+    }
     .imageContainer {
       width: 50vw;
+      margin-top: 0;
+      padding: 0;
     }
     .textContainer {
       justify-content: flex-start;

@@ -3,7 +3,7 @@ import * as styles from "./TeamSlider.module.scss"
 import { StaticImage } from "gatsby-plugin-image"
 import { AnimatePresence, motion } from "framer-motion"
 import useWindowWidth from "../../../utils/hooks/useWindowWidth"
-const TeamCard = ({ name, title, image, alt, story }) => {
+export const TeamCard = ({ name, title, image, alt, story, scrollSpeed }) => {
   const [isHovering, setIsHovering] = useState(false)
   const nameVariants = {
     initial: {
@@ -48,6 +48,7 @@ const TeamCard = ({ name, title, image, alt, story }) => {
       className={styles.teamCardContainer}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
+      data-scroll-speed={scrollSpeed}
     >
       <StaticImage
         src="../../../imgs/manTest.jpg"

@@ -68,7 +68,7 @@ export const AnimatedLetters = ({ title, isTopRow }) => {
     </motion.span>
   )
 }
-const handleSubHeroParalax = ref => {}
+
 const Hero = () => {
   const ref = useRef(null)
   //Variants inside component so we can use hooks to deteremnine weather animation should run.
@@ -88,7 +88,22 @@ const Hero = () => {
       transition: {
         ease: [0.6, 0.01, -0.05, 0.95],
         duration: 1,
-        delay: 1,
+        delay: 0.4,
+      },
+    },
+  }
+
+  const image = {
+    initial: {
+      y: 100,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 1.6,
       },
     },
   }
@@ -132,25 +147,25 @@ const Hero = () => {
         >
           <motion.div
             style={{ height: "100%", overflow: "hidden" }}
-            //variants={image}
-            transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1.6 }}
+            variants={image}
             layoutId="main-image"
           >
             <StaticImage
               src="../../imgs/heroMain.jpg"
               alt="Exhale yoga studio"
               className={styles.heroImage}
+              placeholder="none"
             />
           </motion.div>
         </motion.div>
-        <motion.div className={styles.subHeroImageContainer} ref={ref}>
+        {/* <motion.div className={styles.subHeroImageContainer} ref={ref}>
           <StaticImage
             src="../../imgs/testSubHero.jpg"
             alt="Woman in yoga studio"
             className={styles.subHeroImage}
             loading="eager"
           />
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
       {/* <SocialScrollOut /> */}

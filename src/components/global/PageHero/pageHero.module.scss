@@ -1,7 +1,7 @@
 @import "../../../styles/global.scss";
 
 .pageHeroContainer {
-  margin-top: calc(5% + 115px);
+  margin-top: 50px;
   position: relative;
   .content {
     font-family: "Lora", Georgia, "Times New Roman", Times, serif;
@@ -9,7 +9,7 @@
     margin-bottom: 40px;
   }
   .contentContainer {
-    padding: 0 5%;
+    padding: 0 8%;
   }
   .mainImage {
     height: 80vh;
@@ -67,4 +67,10 @@
       max-width: 60vw;
     }
   }
+}
+
+.heroImageContainer {
+  overflow: hidden;
+  width: fit-content;
+  height: fit-content;
 }

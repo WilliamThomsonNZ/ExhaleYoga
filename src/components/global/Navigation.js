@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { motion } from "framer-motion"
 import MenuItem from "./MenuItem"
 import * as styles from "../../styles/menu.module.scss"
-const Navigation = () => {
+const Navigation = ({ setMenuOpen }) => {
   const menuItems = [
     { name: "Home", route: "/" },
     { name: "Timetable", route: "/time-table" },
@@ -45,6 +45,7 @@ const Navigation = () => {
             key={index}
             handleMouseEnter={handleMouseEnter}
             handleMouseLeave={handleMouseLeave}
+            setMenuOpen={setMenuOpen}
             hoverIndex={hoverIndex}
           />
         ))}

@@ -19,6 +19,9 @@ body {
     }
   }
 }
+.bw-widget__day {
+  background: pink !important;
+}
 .subHeroImageContainer {
   display: none;
   .subHeroImage {
@@ -41,9 +44,9 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 6rem;
+  margin-top: 25px;
   .heroTextContainer {
-    padding-left: 5%;
+    padding-left: 8%;
 
     .heroMainText {
       font-family: "Lora", serif;
@@ -65,10 +68,11 @@ body {
       }
       .heroSubText {
         font-family: "Poppins", sans-serif;
-        line-height: 1.6;
-        font-size: 15px;
+        line-height: 1.7;
+        font-size: 14px;
         width: 75%;
         max-width: 350px;
+        margin: 15px 0;
       }
     }
   }

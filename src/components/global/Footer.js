@@ -32,17 +32,19 @@ const Footer = () => {
         </form>
         <nav className={styles.contactDetailsContainer}>
           <div className={styles.internalLinks}>
-            <Link route="/">Home</Link>
-            <Link route="/timetable">Timetable</Link>
-            <Link route="/pricing">Pricing</Link>
-            <Link route="/meet-the-team">Meet the team</Link>
-            <Link route="/our-space">Our space</Link>
-            <Link route="/contact">Contact</Link>
+            <Link to="/">Home</Link>
+            <Link to="/timetable">Timetable</Link>
+            <Link to="/pricing">Pricing</Link>
+            <Link to="/our-team">Meet the team</Link>
+            <Link to="/our-space">Our space</Link>
+            <Link to="/contact">Contact</Link>
           </div>
           <div className={styles.externalLinks}>
-            <a href="#">Mind Body</a>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+            <a href="https://cart.mindbodyonline.com/sites/7709/session/new">
+              Mind Body
+            </a>
+            <a href="https://www.instagram.com/yinyoganapier/">Instagram</a>
+            <a href="https://www.facebook.com/YinYogaNapier">Facebook</a>
           </div>
           <div className={styles.contactLinks}>
             <a href="mailto:#">team@exhaleyoga.co.nz</a>

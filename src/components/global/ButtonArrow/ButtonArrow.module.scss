@@ -43,7 +43,7 @@
 }
 @include breakpoint($medium) {
   .button {
-    font-weight: 700;
+    //font-weight: 700;
     font-size: 18px;
     .arrowIcon {
       font-size: 16px;

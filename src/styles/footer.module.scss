@@ -2,12 +2,13 @@
 
 .container {
   //background: #e9e9e9;
-  padding: 0px 5% 50px 5%;
+  padding: 0px 8% 50px 8%;
 
   margin-top: 115px;
   .logoContainer {
     display: flex;
     align-items: center;
+    z-index: 50;
     .logo {
       width: 40px;
       height: 40px;

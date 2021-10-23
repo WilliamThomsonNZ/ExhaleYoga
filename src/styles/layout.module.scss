@@ -3,3 +3,22 @@
   margin: 0;
   box-sizing: border-box;
 }
+.menuOpen {
+  overflow-y: hidden;
+}
+.hideScroll {
+  overflow: hidden;
+}
+.app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  //pointer-events: none;
+  .scroll {
+    padding: 2vh 0;
+    //pointer-events: none;
+  }
+}

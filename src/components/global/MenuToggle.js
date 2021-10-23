@@ -56,17 +56,29 @@ const MenuToggle = ({ handleToggle, menuOpen }) => {
       onClick={e => handleToggle(e)}
     >
       <motion.div className={styles.menuTextContainer}>
-        <motion.span variants={menuScroll}>Menu</motion.span>
-        <motion.span variants={menuScroll}>Close</motion.span>
+        <motion.span
+          variants={menuScroll}
+          animate={menuOpen ? "open" : "closed"}
+        >
+          Menu
+        </motion.span>
+        <motion.span
+          variants={menuScroll}
+          animate={menuOpen ? "open" : "closed"}
+        >
+          Close
+        </motion.span>
       </motion.div>
       <div className={styles.hamburger}>
         <motion.span
           className={styles.menuToggleBar}
           variants={spanVariantsUpper}
+          animate={menuOpen ? "open" : "closed"}
         ></motion.span>
         <motion.span
           className={styles.menuToggleBar}
           variants={spanVariantsLower}
+          animate={menuOpen ? "open" : "closed"}
         ></motion.span>
       </div>
     </motion.button>

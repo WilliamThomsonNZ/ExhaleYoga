@@ -4,17 +4,96 @@ import * as eventStyles from "./EventSlider.module.scss"
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import { AnimatePresence, motion } from "framer-motion"
 import useWindowWidth from "../../../utils/hooks/useWindowWidth"
-
+import ButtonArrow from "../ButtonArrow/ButtonArrow"
+// const EventCard = ({ eventName, imageData, eventDescription }) => {
+//   console.log(imageData)
+//   return (
+//     <div className={styles.teamCardContainer}>
+//       <GatsbyImage image={imageData.gatsbyImageData} alt={"alt"} />
+//       <div className={eventStyles.eventHoverContainer}>
+//         <h6>{eventName}</h6>
+//         <button>More information</button>
+//         <p>{eventDescription.eventDescription}</p>
+//       </div>
+//     </div>
+//   )
+// }
 const EventCard = ({ eventName, imageData, eventDescription }) => {
-  console.log(imageData)
+  const [isHovering, setIsHovering] = useState(false)
+  const [nameHeight, setNameHeight] = useState(-180)
+  const width = useWindowWidth(300)
+  useEffect(() => {
+    if (width > 800) {
+      setNameHeight(-160)
+    }
+  }, [width])
+  const nameVariants = {
+    initial: {
+      y: 0,
+      transition: {
+        ease: [0.405, 0, 0.025, 1],
+        duration: 0.8,
+      },
+    },
+    animate: {
+      //scale: 0.8,
+      y: nameHeight,
+      transition: {
+        ease: [0.405, 0, 0.025, 1],
+        duration: 0.8,
+      },
+    },
+  }
+  const storyVariants = {
+    initial: {
+      y: 100,
+      opacity: 0,
+      transition: {
+        ease: [0.405, 0, 0.025, 1],
+        duration: 0.8,
+      },
+    },
+    animate: {
+      y: -10,
+      opacity: 1,
+      transition: {
+        ease: [0.405, 0, 0.025, 1],
+        duration: 0.8,
+        delay: 0.1,
+      },
+    },
+  }
   return (
-    <div className={styles.teamCardContainer}>
-      <GatsbyImage image={imageData.gatsbyImageData} alt={"alt"} />
-      <div className={eventStyles.eventHoverContainer}>
-        <h6>{eventName}</h6>
-        <button>More information</button>
-        <p>{eventDescription.eventDescription}</p>
-      </div>
+    <div
+      className={`${styles.teamCardContainer} ${styles.eventCardContainer}`}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      <GatsbyImage
+        image={imageData.gatsbyImageData}
+        alt={eventDescription}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      />
+      <motion.h6
+        variants={nameVariants}
+        animate={isHovering ? "animate" : "initial"}
+        className={styles.name}
+      >
+        {eventName}
+        <span className={styles.eventDate}>10/11/2021</span>
+      </motion.h6>
+
+      <motion.p
+        variants={storyVariants}
+        animate={isHovering ? "animate" : "initial"}
+        className={styles.story}
+      >
+        <span className={styles.description}>
+          {eventDescription.eventDescription}
+        </span>
+        <ButtonArrow label={"More information"} isWhite />
+      </motion.p>
     </div>
   )
 }
@@ -40,13 +119,9 @@ const EventSlider = ({ data }) => {
   const [scrollAmount, setScrollAmount] = useState(0)
   useEffect(() => {
     if (windowWidth < 800) {
-      setScrollAmount(240)
-    } else if (windowWidth > 800 && windowWidth < 1150) {
-      setScrollAmount(290)
-    } else if (windowWidth > 1150 && windowWidth < 1500) {
-      setScrollAmount(360)
+      setScrollAmount(340)
     } else {
-      setScrollAmount(430)
+      setScrollAmount(390)
     }
   }, [windowWidth])
   const handleArrowClick = value => {

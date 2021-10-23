@@ -9,6 +9,7 @@ const MenuItem = ({
   handleMouseEnter,
   handleMouseLeave,
   hoverIndex,
+  setMenuOpen,
 }) => {
   let isHovering =
     hoverIndex === index ? styles.isHovering : styles.isNotHovering
@@ -42,7 +43,11 @@ const MenuItem = ({
       onMouseLeave={e => handleMouseLeave(e)}
     >
       <motion.div variants={menuItem} className={styles.menuItemContent}>
-        <Link to={route} className={styles.menuLink}>
+        <Link
+          to={route}
+          className={styles.menuLink}
+          onClick={() => setMenuOpen(false)}
+        >
           <span className={styles.menuItemIndex}>0{index}.</span>
           <span className={styles.menuTitle}>{name}</span>
         </Link>
