@@ -7,6 +7,7 @@ import useWindowWidth from "../../utils/hooks/useWindowWidth"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import MenuToggle from "./MenuToggle"
+import { StaticImage } from "gatsby-plugin-image"
 const Header = ({ handleMenuToggle, menuOpen }) => {
   const headerVariants = {
     initial: { opacity: 0, y: -50 },
@@ -43,10 +44,10 @@ const Header = ({ handleMenuToggle, menuOpen }) => {
       >
         <motion.div className={styles.logoContainer}>
           <Link to={"/"} className={styles.logo}>
-            <Icon className={styles.logoSvg} />
-            <div className={styles.logoTextContainer}>
-              <motion.span className={styles.logoText}>EXHALE YOGA</motion.span>
-            </div>
+            <StaticImage
+              src="../../imgs/Exhale_Logo_Black.png"
+              alt={"Exhale Yoga Studio"}
+            />
           </Link>
         </motion.div>
         <nav className={styles.desktopNavigationContainer}>

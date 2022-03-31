@@ -24,7 +24,7 @@ const TimeTable = ({ data }) => {
           padding-right:0;
         }
         .mindbodyContainer  #bw-widget__schedules-167916 .bw-widget .bw-header__title{
-          font-family: Lora;
+          font-family: alia;
           font-size:25px;
           font-weight:500;
         }
@@ -49,7 +49,7 @@ const TimeTable = ({ data }) => {
           border-top:none !important;
           margin-top:25px;
           font-size: 20px;
-          font-family: Lora !important;
+          font-family: alia !important;
           font-weight:500;
           border-bottom: 1px solid #000;
           padding-bottom:15px;

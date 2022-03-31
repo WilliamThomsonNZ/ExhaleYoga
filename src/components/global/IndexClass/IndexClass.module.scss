@@ -1,4 +1,5 @@
 @import "../../../styles/global.scss";
+@import "../../../styles/typography.css";
 
 .container {
   margin-top: 115px;
@@ -6,10 +7,10 @@
 }
 
 .textContent {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: normal;
-  font-family: "Lora";
-  line-height: 1.4;
+  font-family: "alia";
+  line-height: 1.1;
   padding: 0 8%;
   position: relative;
 }
@@ -40,11 +41,12 @@
     margin: 0;
     z-index: 2;
     font-weight: normal;
-    font-size: 40px;
+    font-size: 50px;
     transform-origin: 0% 0%;
+    font-family: "alia";
   }
   .tileInformation {
-    font-family: "Poppins";
+    font-family: "Arimo";
     z-index: 2;
     font-size: 14px;
     line-height: 1.7;
@@ -109,9 +111,9 @@
     aspect-ratio: 4/6;
   }
   .textContent {
-    font-size: 35px;
+    font-size: 48px;
     width: 90%;
-    line-height: 1.7;
+
     position: static;
     max-width: 1500px;
     margin: 0 auto;
@@ -125,6 +127,6 @@
 }
 @include breakpoint($MLarge) {
   .textContent {
-    font-size: 45px;
+    font-size: 64px;
   }
 }

@@ -1,10 +1,11 @@
 @import "../../../styles/global.scss";
+@import "../../../styles/typography.css";
 
 .pageHeroContainer {
   margin-top: 50px;
   position: relative;
   .content {
-    font-family: "Lora", Georgia, "Times New Roman", Times, serif;
+    font-family: "alia", Georgia, "Times New Roman", Times, serif;
     font-size: 26px;
     margin-bottom: 40px;
   }

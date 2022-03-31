@@ -1,4 +1,5 @@
 @import "./global.scss";
+@import "./typography.css";
 .container {
   width: 100%;
   margin-top: 115px;
@@ -22,12 +23,12 @@
       .title {
         margin-top: 0;
         font-weight: normal;
-        font-family: "Lora";
-        font-size: 25px;
+        font-family: "alia";
+        font-size: 36px;
         margin-bottom: 20px;
       }
       .textContent {
-        font-family: "Poppins";
+        font-family: "Arimo";
         font-size: 15px;
 
         line-height: 1.6;
@@ -87,6 +88,7 @@
     .textContainer {
       .textInnerContainer {
         .title {
+          font-size: 48px;
         }
         .textContent {
           line-height: 1.9;
@@ -100,7 +102,7 @@
       max-width: calc(1500px / 2 - 100px);
       .textInnerContainer {
         .title {
-          font-size: 2.5rem;
+          font-size: 64px;
         }
         .textContent {
           font-size: 18px;

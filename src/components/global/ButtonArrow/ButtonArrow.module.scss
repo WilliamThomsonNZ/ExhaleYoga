@@ -1,4 +1,5 @@
 @import "../../../styles/global.scss";
+@import "../../../styles/typography.css";
 .button {
   cursor: pointer;
   border: none;
@@ -13,7 +14,7 @@
   &.whiteButton {
     border-bottom: 1px solid #fff;
   }
-  font-family: "Poppins", sans-serif;
+  font-family: "Arimo", sans-serif;
   color: inherit;
   .arrowIcon {
     font-size: 14px;

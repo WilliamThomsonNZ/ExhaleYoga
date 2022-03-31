@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "alia";
+  src: local("alia"), url(../fonts/aila.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Funkturm";
+  src: local("FunkTurm"), url(../fonts/Funkturm.otf) format("truetype");
+}

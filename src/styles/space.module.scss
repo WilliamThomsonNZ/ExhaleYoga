@@ -1,4 +1,5 @@
 @import "./global.scss";
+@import "./typography.css";
 .pageContent {
   padding: 0 5%;
   margin-top: 115px;
@@ -22,7 +23,7 @@
     }
   }
   .title {
-    font-family: "Lora";
+    font-family: "alia";
     font-weight: normal;
     font-size: 26px;
   }

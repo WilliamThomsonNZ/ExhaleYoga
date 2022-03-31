@@ -1,4 +1,5 @@
 @import "./global.scss";
+@import "./typography.css";
 
 body {
   background: #f5f5f5;
@@ -49,16 +50,13 @@ body {
     padding-left: 8%;
 
     .heroMainText {
-      font-family: "Lora", serif;
+      font-family: "alia", serif;
       font-variant: normal;
       font-weight: 300;
       font-style: normal;
       font-size: 5rem;
-      line-height: 1.2;
+      line-height: 0.9;
       margin-bottom: 0;
-      .amp {
-        font-style: italic;
-      }
     }
 
     .subTextContainer {
@@ -67,7 +65,7 @@ body {
         //overflow: visible;
       }
       .heroSubText {
-        font-family: "Poppins", sans-serif;
+        font-family: "Arimo", sans-serif;
         line-height: 1.7;
         font-size: 14px;
         width: 75%;
@@ -161,8 +159,7 @@ body {
       color: #000;
       margin-bottom: 5rem;
       .heroMainText {
-        font-size: 7.5rem;
-        line-height: 1.2;
+        font-size: 200px;
         span {
         }
       }
@@ -201,7 +198,7 @@ body {
       padding-left: 0;
       color: #000;
       .heroMainText {
-        font-size: 9rem;
+        //font-size: 9rem;
       }
     }
     .heroImageContainer {
