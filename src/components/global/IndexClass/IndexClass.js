@@ -62,6 +62,8 @@ const IndexClass = ({}) => {
         We are a spirited and dynamic yoga community, your financial commitment
         to YinYoga Napier supports us to widen and reach. The studio is
         influenced by the natural beauty of New Zealand.
+      </p>{" "}
+      <div className={styles.hoverIconContainer}>
         <motion.svg
           width="162"
           height="154"
@@ -189,7 +191,7 @@ const IndexClass = ({}) => {
             </clipPath>
           </defs>
         </motion.svg>
-      </p>
+      </div>
       <div className={styles.classTileContainer}>
         {classes.map((tile, index) => (
           <ClassTile
@@ -258,45 +260,10 @@ const ClassTile = ({
   const [isHovering, setIsHovering] = useState(false)
 
   return (
-    // <article
-    //   className={styles.classTile}
-    //   onMouseEnter={() => setIsHovering(true)}
-    //   onMouseLeave={() => setIsHovering(false)}
-    // >
-    //   <span className={styles.index}>
-    //     {index + 1 > 10 ? index + 1 : `0${index + 1}`}
-    //   </span>
-    //   <StaticImage
-    //     src={"../../../imgs/manTest.jpg"}
-    //     alt={"test"}
-    //     className={styles.tileImage}
-    //     onMouseEnter={() => setIsHovering(true)}
-    //     onMouseLeave={() => setIsHovering(false)}
-    //   />
-    //   <div className={styles.tileContent}>
-    //     <motion.h6
-    //       className={styles.tileTitle}
-    //       variants={nameVariants}
-    //       animate={isHovering ? "animate" : "initial"}
-    //     >
-    //       {tileName}
-    //     </motion.h6>
-    //     <motion.p
-    //       className={styles.tileInformation}
-    //       variants={infoVariants}
-    //       animate={isHovering ? "animate" : "initial"}
-    //     >
-    //       <span>{content}</span>
-    //       <ButtonArrow label={"Book class"} isWhite />
-    //     </motion.p>
-    //   </div>
-    // </article>
     <div
       className={styles.classTile}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-      data-scroll
-      data-scroll-speed={scrollSpeed}
     >
       <StaticImage
         src="../../../imgs/manTest.jpg"

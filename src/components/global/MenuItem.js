@@ -35,7 +35,11 @@ const MenuItem = ({
       },
     },
   }
-
+  const handleClick = () => {
+    setMenuOpen(false)
+    document.body.style.height = "unset"
+    document.body.style.overflow = "unset"
+  }
   return (
     <motion.li
       className={`${styles.menuItem} ${isHovering}`}
@@ -46,7 +50,7 @@ const MenuItem = ({
         <Link
           to={route}
           className={styles.menuLink}
-          onClick={() => setMenuOpen(false)}
+          onClick={() => handleClick()}
         >
           <span className={styles.menuItemIndex}>0{index}.</span>
           <span className={styles.menuTitle}>{name}</span>

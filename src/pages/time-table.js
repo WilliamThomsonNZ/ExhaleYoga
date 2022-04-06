@@ -25,7 +25,7 @@ const TimeTable = ({ data }) => {
         }
         .mindbodyContainer  #bw-widget__schedules-167916 .bw-widget .bw-header__title{
           font-family: alia;
-          font-size:25px;
+          font-size:32px;
           font-weight:500;
         }
         .mindbodyContainer .bw-calendar-container{
@@ -49,7 +49,7 @@ const TimeTable = ({ data }) => {
           border-top:none !important;
           margin-top:25px;
           font-size: 20px;
-          font-family: alia !important;
+          font-family: Arimo !important;
           font-weight:500;
           border-bottom: 1px solid #000;
           padding-bottom:15px;
@@ -71,6 +71,11 @@ const TimeTable = ({ data }) => {
         @media(min-width:1429px){
           .mindbodyContainer .bw-widget--large.bw-widget--spacious .bw-session{
               padding: 25px 0;
+          }
+          .mindbodyContainer  #bw-widget__schedules-167916 .bw-widget .bw-header__title{
+            font-family: alia;
+            font-size:64px;
+            margin-bottom: 
           }
           .mindbodyContainer .bw-widget__date {
             font-size:28px;

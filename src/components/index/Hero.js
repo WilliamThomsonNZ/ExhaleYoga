@@ -37,7 +37,7 @@ export const AnimatedLetters = ({ title, isTopRow }) => {
     animate: {
       transition: {
         //delayChildren: delay,
-        staggerChildren: 0.08,
+        staggerChildren: 0.04,
       },
     },
   }
@@ -50,7 +50,9 @@ export const AnimatedLetters = ({ title, isTopRow }) => {
     >
       {[...title].map((letter, index) => (
         <motion.span
-          className={styles.rowLetter}
+          className={`${styles.rowLetter} ${
+            letter == "&" ? styles.amp : undefined
+          }`}
           variants={letterAni}
           key={index}
         >
@@ -112,10 +114,13 @@ const Hero = () => {
       <div className={styles.heroContainer}>
         <div className={styles.heroTextContainer}>
           <h1 className={styles.heroMainText}>
-            <div className={styles.bannerRow}>
-              <AnimatedLetters title={"Space"} isTopRow />
+            <div className={`${styles.bannerRow} ${styles.desktopBanner}`}>
+              <AnimatedLetters title={"Yoga &  space"} />
             </div>
-            <div className={styles.bannerRow}>
+            <div className={`${styles.bannerRow} ${styles.mobileBanner}`}>
+              <AnimatedLetters title={"Space &"} />
+            </div>
+            <div className={`${styles.bannerRow} ${styles.mobileBanner}`}>
               <AnimatedLetters title={"Studio"} />
             </div>
           </h1>

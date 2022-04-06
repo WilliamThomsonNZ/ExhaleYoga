@@ -41,6 +41,7 @@
     "react-helmet": "^6.1.0",
     "react-intersection-observer": "^8.32.0",
     "react-locomotive-scroll": "^0.1.8",
+    "react-slick": "^0.28.1",
     "sass": "^1.32.12"
   },
   "devDependencies": {

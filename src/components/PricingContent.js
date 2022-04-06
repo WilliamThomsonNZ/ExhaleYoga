@@ -22,7 +22,7 @@ const PricingContent = () => {
             Hobsonville and West Auckland: Catalina Bay, around the Auckland
             harbour, Waitakere Ranges, or the stunning West Coast beaches.
           </p>
-          <ButtonArrow label={"Book now"} />
+          <ButtonArrow label={"Book now"} isWhite />
         </div>
         <StaticImage
           src="../imgs/1.jpg"
@@ -96,7 +96,7 @@ const PricingContent = () => {
               <span>$10.00</span>
             </li>
           </ul>
-          <ButtonArrow label={"Book now"} />
+          <ButtonArrow label={"Book now"} isWhite />
         </div>
       </section>
     </>

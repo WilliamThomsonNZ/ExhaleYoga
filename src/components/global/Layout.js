@@ -29,33 +29,40 @@ const Layout = ({ children }) => {
   }
   const [menuOpen, setMenuOpen] = useState(false)
   const handleMenuToggle = e => {
+    if (!menuOpen) {
+      document.body.style.height = "100vh"
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.height = "unset"
+      document.body.style.overflow = "unset"
+    }
     setMenuOpen(menuOpen => !menuOpen)
   }
   const containerRef = useRef(null)
   return (
     <>
-      <LocomotiveScrollProvider
+      {/* <LocomotiveScrollProvider
         options={{ smooth: true }}
         containerRef={containerRef}
-      >
-        <div data-scroll-container ref={containerRef}>
-          <div data-scroll-section>
-            {/* <Helmet>
+      > */}
+      {/* <div data-scroll-container ref={containerRef}>
+        <div data-scroll-section> */}
+      {/* <Helmet>
         <html className={menuOpen ? styles.hideScroll : undefined} />
       </Helmet> */}
 
-            <AnimatePresence>
-              {menuOpen && <Menu setMenuOpen={setMenuOpen} />}
-            </AnimatePresence>
+      <AnimatePresence>
+        {menuOpen && <Menu setMenuOpen={setMenuOpen} />}
+      </AnimatePresence>
 
-            <AnimatePresence>
-              <Header handleMenuToggle={handleMenuToggle} menuOpen={menuOpen} />
-              {children}
-              <Footer />
-            </AnimatePresence>
-          </div>
-        </div>
-      </LocomotiveScrollProvider>
+      <AnimatePresence>
+        <Header handleMenuToggle={handleMenuToggle} menuOpen={menuOpen} />
+        {children}
+        <Footer />
+      </AnimatePresence>
+      {/* </div>
+      </div> */}
+      {/* </LocomotiveScrollProvider> */}
     </>
   )
 }

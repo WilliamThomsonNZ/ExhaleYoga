@@ -25,7 +25,7 @@ const HireSpace = () => {
             flowing with breath. Located in the very heart of Sanur you will
             find our Spa and Yoga Shala nestled down a banana palm-lined avenue.
           </p>
-          <ButtonArrow label={"More information"} />
+          <ButtonArrow label={"More information"} isWhite={true} />
         </div>
       </div>
     </div>

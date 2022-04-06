@@ -47,6 +47,7 @@ const Header = ({ handleMenuToggle, menuOpen }) => {
             <StaticImage
               src="../../imgs/Exhale_Logo_Black.png"
               alt={"Exhale Yoga Studio"}
+              class={styles.logo}
             />
           </Link>
         </motion.div>
@@ -56,7 +57,7 @@ const Header = ({ handleMenuToggle, menuOpen }) => {
               <Link to="/">Home</Link>
             </li>
             <li className={styles.navigationItem}>
-              <Link to="/time-table">Timetable</Link>
+              <Link to="/time-table">Timetable &amp; Events</Link>
             </li>
             <li className={styles.navigationItem}>
               <Link to="/events">Events</Link>

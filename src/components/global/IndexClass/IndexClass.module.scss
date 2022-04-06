@@ -13,12 +13,13 @@
   line-height: 1.1;
   padding: 0 8%;
   position: relative;
+  text-align: center;
 }
 .classTileContainer {
-  margin-top: 115px;
+  margin-top: 75px;
 }
 .classTile {
-  position: relative;
+  position: relative !important;
   color: #fff;
   // margin-bottom: 30px;
   .index {
@@ -64,13 +65,16 @@
     z-index: 2;
   }
 }
+.hoverIconContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .rotateSvg {
   width: 90px;
   height: 90px;
-  position: absolute;
-  right: 5%;
   transform-origin: center center !important;
-  bottom: -85px;
 }
 
 .tileImage {
@@ -79,8 +83,7 @@
   backdrop-filter: opacity(20%);
 }
 @include breakpoint(600px) {
-  .container,
-  .classTileContainer {
+  .container {
     margin-top: 15vw;
   }
 }
@@ -88,6 +91,7 @@
   .classTileContainer {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 8vw;
   }
   .classTile {
     width: 50%;
@@ -102,6 +106,14 @@
 @include breakpoint($large) {
   .classTileContainer {
     flex-wrap: nowrap;
+  }
+  .classTile {
+    &:nth-child(even) {
+      margin-bottom: 55px;
+    }
+    &:nth-child(odd) {
+      margin-top: 55px;
+    }
   }
   .container {
     padding: 0;
@@ -121,8 +133,7 @@
   .rotateSvg {
     width: 120px;
     height: 120px;
-    top: 20%;
-    right: 8%;
+    margin-top: 50px;
   }
 }
 @include breakpoint($MLarge) {

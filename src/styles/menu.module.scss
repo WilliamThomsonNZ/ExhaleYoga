@@ -22,8 +22,6 @@ $font-light: #f1f1f1;
     color: #000;
     overflow: hidden;
     padding-right: 30px;
-    width: 30px;
-
     &.isHovering {
       .menuTitle {
         transform: translateX(30px);
@@ -35,10 +33,10 @@ $font-light: #f1f1f1;
     .menuLink {
       color: inherit;
       text-decoration: none;
-      font-family: "aila";
+      font-family: "alia";
       font-weight: normal;
       transform: translateX(0);
-      font-size: 2.7rem;
+      font-size: 56px;
       overflow: hidden;
     }
     .menuTitle {
@@ -184,39 +182,6 @@ $font-light: #f1f1f1;
   }
 }
 
-.logo {
-  font-family: "Arimo";
-  font-weight: 500;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: fit-content;
-  z-index: 11;
-  .logoSvg {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 5px;
-    display: block;
-    path {
-      fill: #000;
-    }
-  }
-  .logoText {
-    letter-spacing: 3px;
-    font-size: 12px;
-    display: block;
-    margin-left: 10px;
-  }
-  @include breakpoint($XLarge) {
-    .logoText {
-      font-size: 18px;
-    }
-  }
-}
-
 .viewTimetable {
   display: none;
   font-family: "alia";
@@ -231,7 +196,7 @@ $font-light: #f1f1f1;
 .logo {
   top: 4%;
   left: 5%;
-  width: 150px;
+  width: 125px;
   height: auto;
   transition: all 0.3s ease-in-out;
   transition-delay: 0.5;
@@ -247,11 +212,11 @@ $font-light: #f1f1f1;
       }
     }
   }
+  @media (min-width: $large) {
+    width: 150px;
+  }
   @include breakpoint($XLarge) {
-    .logoSvg {
-      height: 50px;
-      width: 50px;
-    }
+    width: 125px;
   }
 }
 
@@ -351,6 +316,7 @@ $font-light: #f1f1f1;
   z-index: 50;
 }
 .MenuToggleContainer {
+  z-index: 40;
   @include breakpoint($medium) {
     display: none;
   }
