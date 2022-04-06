@@ -16,7 +16,7 @@ const OurTeam = () => {
       <section className={styles.teamMissionStatement}>
         <p className={styles.content}>
           We are a spirited and dynamic yoga community, your financial
-          commitment to YinYoga Napier supports us to widen and reach. The
+          commitment to 1YinYoga Napier supports us to widen and reach. The
           studio is influenced by the natural beauty of New Zealand.
         </p>
       </section>
