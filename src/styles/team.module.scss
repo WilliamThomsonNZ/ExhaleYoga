@@ -5,9 +5,10 @@
   margin-top: 115px;
   .content {
     font-family: "alia";
-    font-size: 24px;
-    line-height: 1.4;
+    font-size: 32px;
+    line-height: 1.1;
     position: relative;
+    text-align: center;
   }
 }
 .imagesContainer {
@@ -18,9 +19,6 @@
 @include breakpoint(600px) {
   .teamMissionStatement {
     margin-top: 15vw;
-    .content {
-      font-size: 22px;
-    }
   }
   .imagesContainer {
     margin-top: 15vw;
@@ -28,11 +26,6 @@
 }
 
 @include breakpoint($medium) {
-  .teamMissionStatement {
-    .content {
-      font-size: 22px;
-    }
-  }
 }
 
 @include breakpoint($large) {
@@ -40,7 +33,7 @@
     width: 70%;
     position: relative;
     .content {
-      font-size: 2rem;
+      font-size: 48px;
       position: static;
     }
   }
@@ -51,7 +44,7 @@
     padding-left: calc((100vw - 1500px) / 2);
 
     .content {
-      font-size: 2.5rem;
+      font-size: 64px;
     }
   }
 }

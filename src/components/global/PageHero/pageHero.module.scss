@@ -4,13 +4,28 @@
 .pageHeroContainer {
   margin-top: 50px;
   position: relative;
+  .desktopBanner {
+    display: none;
+  }
+  .bannerRow {
+    overflow: hidden;
+  }
   .content {
     font-family: "alia", Georgia, "Times New Roman", Times, serif;
     font-size: 26px;
     margin-bottom: 40px;
   }
+  @media (min-width: 500px) {
+    .desktopBanner {
+      display: block;
+    }
+    .mobileBanner {
+      display: none;
+    }
+  }
   .contentContainer {
     padding: 0 8%;
+    margin: 3rem 0 4rem;
   }
   .mainImage {
     height: 80vh;
@@ -30,12 +45,16 @@
       max-width: 600px;
       margin-bottom: 57px;
     }
+    .contentContainer {
+      margin: 3rem 0 4rem;
+    }
   }
   @include breakpoint($large) {
     margin-top: 150px;
     .contentContainer {
       //max-width: 1500px;
       margin: 0 auto;
+      margin-bottom: 5rem;
     }
     .mainImage {
       width: 70%;

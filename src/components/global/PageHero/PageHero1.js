@@ -3,25 +3,10 @@ import React, { useEffect } from "react"
 import { useState } from "react"
 import * as styles from "./pageHero.module.scss"
 import { useLocomotiveScroll } from "react-locomotive-scroll"
-import { AnimatedLetters } from "../../index/Hero"
 import { motion } from "framer-motion"
+import AnimatedLetters from "../AnimatedLetters"
+
 const PageHero = ({ content, container }) => {
-  const contentVariants = {
-    initial: {
-      y: 100,
-      opacity: 0,
-      rotate: 2,
-    },
-    animate: {
-      y: 0,
-      rotate: 0,
-      opacity: 1,
-      transition: {
-        ease: [0.6, 0.01, -0.05, 0.95],
-        duration: 1.6,
-      },
-    },
-  }
   const heroImageVariants = {
     initial: {
       y: 100,
@@ -36,17 +21,19 @@ const PageHero = ({ content, container }) => {
       },
     },
   }
+
   return (
     <div className={styles.pageHeroContainer}>
       <div className={styles.contentContainer}>
-        <motion.p
-          variants={contentVariants}
-          animate={"animate"}
-          initial={"initial"}
-          className={styles.content}
-        >
-          {content}
-        </motion.p>
+        <div className={`${styles.bannerRow} ${styles.desktopBanner}`}>
+          <AnimatedLetters title={"Yoga & space"} />
+        </div>
+        <div className={`${styles.bannerRow} ${styles.mobileBanner}`}>
+          <AnimatedLetters title={"Yoga &"} />
+        </div>
+        <div className={`${styles.bannerRow} ${styles.mobileBanner}`}>
+          <AnimatedLetters title={"Space"} />
+        </div>
       </div>
       <div className={styles.heroImageContainer}>
         <motion.div

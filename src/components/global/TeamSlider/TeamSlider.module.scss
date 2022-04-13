@@ -4,9 +4,10 @@
 //Team Card styling
 .teamCardContainer {
   font-family: "Lato";
-  min-width: 200px;
+  min-width: 250px;
   margin-left: 40px;
   position: relative;
+
   &:first-of-type {
     margin-left: 5%;
   }
@@ -32,11 +33,14 @@
     font-size: 12px;
   }
 }
-
-//TeamSlider styling
 .container {
   margin-top: 115px;
   padding: 0;
+  &.isEventSlider {
+    padding: 115px 0;
+    margin-top: 0;
+    background: #c2cfb8;
+  }
   //padding-left: 5%;
   .controls {
     display: flex;
@@ -47,7 +51,7 @@
     margin-bottom: 40px;
   }
   .title {
-    font-family: "Lato";
+    font-family: "Arimo";
     font-size: 16px;
     font-weight: 600;
     margin-right: 20px;
@@ -60,6 +64,12 @@
       font-size: 25px;
       cursor: pointer;
       font-weight: bold;
+    }
+  }
+  .isEventSlider {
+    .loadingBarOuter {
+      .loadingBarInner {
+      }
     }
   }
   .loadingBarOuter {
@@ -85,6 +95,10 @@
 @include breakpoint(600px) {
   .container {
     margin-top: 15vw;
+    &.isEventSlider {
+      padding-top: 7.5vw;
+      padding-bottom: 7.5vw;
+    }
   }
 }
 

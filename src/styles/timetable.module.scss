@@ -20,3 +20,62 @@
     padding: 0;
   }
 }
+.hoverIconContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rotateSvg {
+  width: 90px;
+  height: 90px;
+  transform-origin: center center !important;
+}
+.teamMissionStatement {
+  padding: 115px 8% 0;
+  margin-top: 115px;
+  background: #c2cfb8;
+  color: #fff;
+  .content {
+    font-family: "alia";
+    font-size: 32px;
+    line-height: 1.1;
+    position: relative;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 115px;
+  }
+}
+@include breakpoint(600px) {
+  .teamMissionStatement {
+    margin-top: 7.5vw;
+    padding-top: 7.5vw;
+  }
+  .imagesContainer {
+    margin-top: 15vw;
+  }
+}
+
+@include breakpoint($medium) {
+}
+
+@include breakpoint($large) {
+  .teamMissionStatement {
+    position: relative;
+    .content {
+      font-size: 48px;
+      position: static;
+    }
+  }
+}
+@include breakpoint($XLarge) {
+  .teamMissionStatement {
+    max-width: 1500px;
+    padding-left: calc((100vw - 1500px) / 2);
+    padding-right: calc((100vw - 1500px) / 2);
+
+    .content {
+      font-size: 64px;
+    }
+  }
+}

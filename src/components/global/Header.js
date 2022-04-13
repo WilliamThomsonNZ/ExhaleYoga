@@ -57,10 +57,10 @@ const Header = ({ handleMenuToggle, menuOpen }) => {
               <Link to="/">Home</Link>
             </li>
             <li className={styles.navigationItem}>
-              <Link to="/time-table">Timetable &amp; Events</Link>
+              <Link to="/our-space">Hire Our Space</Link>
             </li>
             <li className={styles.navigationItem}>
-              <Link to="/events">Events</Link>
+              <Link to="/time-table-events">Timetable &amp; Events</Link>
             </li>
             <li className={styles.navigationItem}>
               <Link to="/pricing">Pricing</Link>
@@ -69,7 +69,7 @@ const Header = ({ handleMenuToggle, menuOpen }) => {
               <Link to="/our-team">Team</Link>
             </li>
             <li className={styles.navigationItem}>
-              <Link to="/our-space">Our Space</Link>
+              <Link to="/gallery">Gallery</Link>
             </li>
             <li className={styles.navigationItem}>
               <Link to="/contact">Contact</Link>

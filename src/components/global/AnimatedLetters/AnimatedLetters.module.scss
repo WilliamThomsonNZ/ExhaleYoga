@@ -1,0 +1,29 @@
+@import "../../../styles/global.scss";
+
+.rowTitle,
+.rowLetter {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  font-family: "alia", serif;
+  font-variant: normal;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 100px;
+  line-height: 1;
+
+  margin-bottom: 0;
+  &.amp {
+    font-size: 70px;
+    margin: 0 15px;
+  }
+}
+.bannerRow {
+  overflow: hidden;
+}
+
+@include breakpoint($large) {
+  .rowLetter {
+    font-size: 200px;
+  }
+}

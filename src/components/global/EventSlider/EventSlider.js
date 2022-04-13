@@ -5,19 +5,7 @@ import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import { AnimatePresence, motion } from "framer-motion"
 import useWindowWidth from "../../../utils/hooks/useWindowWidth"
 import ButtonArrow from "../ButtonArrow/ButtonArrow"
-// const EventCard = ({ eventName, imageData, eventDescription }) => {
-//   console.log(imageData)
-//   return (
-//     <div className={styles.teamCardContainer}>
-//       <GatsbyImage image={imageData.gatsbyImageData} alt={"alt"} />
-//       <div className={eventStyles.eventHoverContainer}>
-//         <h6>{eventName}</h6>
-//         <button>More information</button>
-//         <p>{eventDescription.eventDescription}</p>
-//       </div>
-//     </div>
-//   )
-// }
+
 const EventCard = ({ eventName, imageData, eventDescription }) => {
   const [isHovering, setIsHovering] = useState(false)
   const [nameHeight, setNameHeight] = useState(-180)
@@ -99,7 +87,6 @@ const EventCard = ({ eventName, imageData, eventDescription }) => {
 }
 
 const EventSlider = ({ data }) => {
-  console.log(data)
   const story =
     "The studio is influenced by the natural beauty of New Zealand. We encourage you to bring your practice to the great outdoors close to Hobsonville and West Auckland: Catalina Bay, around the Auckland harbour, Waitakere Ranges, or the stunning West Coast beaches."
   const eventCards = data.allContentfulEvent.nodes.map(yogaEvent => (
@@ -171,7 +158,7 @@ const EventSlider = ({ data }) => {
   }
   return (
     <>
-      <section className={styles.container}>
+      <section className={`${styles.container} ${styles.isEventSlider}`}>
         <div className={styles.controls}>
           <div className={styles.arrowContainer}>
             {/* <span className={styles.title}>Our team</span> */}

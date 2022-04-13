@@ -11,6 +11,7 @@ import PricingContent from "../components/PricingContent"
 import Footer from "../components/global/Footer"
 
 const Pricing = ({ data }) => {
+  console.log(data)
   const heroContent =
     "Our space is avaliable to hire for functions and workshops."
   const containerRef = useRef(null)
@@ -39,6 +40,14 @@ export const query = graphql`
               layout: CONSTRAINED
             )
           }
+        }
+      }
+    }
+    allContentfulCtaHeader {
+      edges {
+        node {
+          linkText
+          link
         }
       }
     }

@@ -1,13 +1,10 @@
 import React, { useRef } from "react"
 import * as styles from "../../styles/index.module.scss"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { motion } from "framer-motion"
 import { StaticImage } from "gatsby-plugin-image"
-import BookClass from "./BookClass"
-import { Link } from "gatsby"
-import SocialScrollOut from "../global/socialScrollOut"
-import useWindowWidth from "../../utils/hooks/useWindowWidth"
 import ButtonArrow from "../global/ButtonArrow/ButtonArrow"
+import AnimatedLetters from "../global/AnimatedLetters/index"
+
 //Text animation
 
 const subContainer = {
@@ -17,58 +14,6 @@ const subContainer = {
       staggerChildren: 1,
     },
   },
-}
-
-export const AnimatedLetters = ({ title, isTopRow }) => {
-  const width = useWindowWidth(200)
-  let delay = 2
-  const letterAni = {
-    initial: { y: 100, opacity: 0 },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        ease: [0.405, 0, 0.025, 1],
-        duration: 0.7,
-      },
-    },
-  }
-  const banner = {
-    animate: {
-      transition: {
-        //delayChildren: delay,
-        staggerChildren: 0.04,
-      },
-    },
-  }
-  return (
-    <motion.span
-      className={styles.rowTitle}
-      variants={banner}
-      initial="initial"
-      animate="animate"
-    >
-      {[...title].map((letter, index) => (
-        <motion.span
-          className={`${styles.rowLetter} ${
-            letter == "&" ? styles.amp : undefined
-          }`}
-          variants={letterAni}
-          key={index}
-        >
-          {letter}
-        </motion.span>
-      ))}
-      {isTopRow && (
-        <motion.span
-          className={`${styles.amp} ${styles.rowLetter}`}
-          variants={letterAni}
-        >
-          &nbsp;&amp;&nbsp;
-        </motion.span>
-      )}
-    </motion.span>
-  )
 }
 
 const Hero = () => {
@@ -118,10 +63,10 @@ const Hero = () => {
               <AnimatedLetters title={"Yoga &  space"} />
             </div>
             <div className={`${styles.bannerRow} ${styles.mobileBanner}`}>
-              <AnimatedLetters title={"Space &"} />
+              <AnimatedLetters title={"Yoga &"} />
             </div>
             <div className={`${styles.bannerRow} ${styles.mobileBanner}`}>
-              <AnimatedLetters title={"Studio"} />
+              <AnimatedLetters title={"Space"} />
             </div>
           </h1>
           <motion.div
