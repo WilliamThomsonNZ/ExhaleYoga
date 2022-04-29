@@ -28,6 +28,9 @@
       color: #fff;
     }
   }
+  .signUpButtonContainer {
+    position: relative;
+  }
   .contactContainer {
     .newsLetterSignUp {
       margin-top: 70px;
@@ -48,6 +51,7 @@
         font-family: "Lato";
         font-size: 16px;
         line-height: 1.9;
+        color: #fff;
       }
       .emailInput::placeholder {
         color: #fff;

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import * as styles from "../../styles/footer.module.scss"
 import NewsLetterSignUp from "./NewsLetterSignUp"
 import { motion } from "framer-motion"
@@ -7,6 +7,36 @@ import { Link } from "gatsby"
 import ButtonArrow from "./ButtonArrow/ButtonArrow"
 import { StaticImage } from "gatsby-plugin-image"
 const Footer = () => {
+  const [emailAddress, setEmailAddress] = useState("")
+  const [emailSignUpLoading, setEmailSignUpLoading] = useState(false)
+
+  const mailchimpSignUp = async () => {
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress))
+      return
+    setEmailSignUpLoading(true)
+    setEmailAddress("Loading...")
+    const url = `https://exhale-api.vercel.app/api/email?email=${emailAddress}`
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    const json = await response.json()
+    console.log(json)
+    if (json.code === 200) {
+      setEmailAddress("Email address added")
+    } else {
+      setEmailAddress("Error adding email address")
+    }
+    setTimeout(() => {
+      setEmailAddress("")
+      setEmailSignUpLoading(false)
+    }, 4000)
+  }
+
+  useEffect(() => {}, [])
+
   return (
     <footer className={styles.container}>
       <div className={styles.innerContainer}>
@@ -23,20 +53,30 @@ const Footer = () => {
           </span>
         </div>
         <div className={styles.contactContainer}>
-          <form className={styles.newsLetterSignUp}>
+          <div className={styles.newsLetterSignUp}>
             <h6 className={styles.title}>
               Stay up to date with events{" "}
               <span className={styles.titleAmp}>&#38;</span> offers.
             </h6>
-            <div className={styles.inputContainer}>
-              <input
-                className={styles.emailInput}
-                type="email"
-                placeholder="e-mail address here"
+            <div className={styles.inputContainer}></div>
+            <input
+              className={styles.emailInput}
+              type="email"
+              placeholder="e-mail address here"
+              value={emailAddress}
+              disabled={emailSignUpLoading}
+              onChange={e => setEmailAddress(e.target.value)}
+            />
+            <div className={styles.signUpButtonContainer}>
+              <ButtonArrow
+                label={""}
+                isFooter={true}
+                isWhite
+                cb={mailchimpSignUp}
+                loading={emailSignUpLoading}
               />
-              <ButtonArrow label={""} isFooter={true} isWhite />
             </div>
-          </form>
+          </div>
           <nav className={styles.contactDetailsContainer}>
             <div className={styles.internalLinks}>
               <Link to="/">Home</Link>

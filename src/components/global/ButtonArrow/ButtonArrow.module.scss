@@ -31,11 +31,25 @@
     border-bottom: none;
     position: absolute;
     right: -5px;
-    top: 10px;
+    top: -40px;
     padding: 5px;
     color: #fff;
   }
+  &.contactButton {
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    color: #c2cfb8;
+    padding: 13px 25px;
+    border: none;
+    .arrowContainer {
+      margin-bottom: 3px;
+    }
+  }
 }
+
 .arrowContainer {
   //   transform: rotate(45deg);
   display: inline-block;

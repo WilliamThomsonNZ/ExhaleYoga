@@ -1,0 +1,122 @@
+@import "./global.scss";
+@import "./typography.css";
+
+.contactContainer {
+  padding: 50px 8%;
+  .heading {
+    margin: 0;
+    line-height: 1;
+  }
+  .address {
+    font-family: "Arimo", sans-serif;
+    line-height: 1.7;
+    font-size: 14px;
+    width: 75%;
+    max-width: 300px;
+    margin: 30px 0 40px 0;
+  }
+
+  .contactLinks {
+    color: #000;
+    text-decoration: none;
+    font-family: "Arimo", sans-serif;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 20px;
+  }
+  .socialsContainer {
+    margin-top: 48px;
+    width: 75%;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    .socialLink {
+      color: #000;
+      text-decoration: none;
+      font-family: "Arimo", sans-serif;
+      display: block;
+      font-size: 14px;
+    }
+  }
+}
+.contactUsImageContainer {
+  margin-top: 115px;
+  padding: 0 8%;
+  max-width: 1500px;
+}
+.contactForm {
+  padding: 50px 8%;
+  background-color: #c2cfb8;
+  .formField,
+  .formTextArea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: none;
+    font-family: "Arimo", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    padding-bottom: 12px;
+    margin-bottom: 60px;
+    &::placeholder {
+      font-weight: bold;
+      color: #fff;
+      font-family: "Arimo", sans-serif;
+    }
+  }
+}
+
+@include breakpoint($large) {
+  .container {
+    display: flex;
+    margin-top: 110px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contactContainer {
+    padding-top: 0;
+    padding-bottom: 0;
+    .address {
+      font-size: 16px;
+      margin-top: 60px;
+      margin-bottom: 120px;
+    }
+    .contactLinks {
+      font-size: 40px;
+      margin-bottom: 29px;
+    }
+    .socialsContainer {
+      margin-top: 90px;
+      .socialLink {
+        font-size: 16px;
+      }
+    }
+  }
+  .contactForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .formField {
+      font-size: 16px;
+    }
+    .formTextArea {
+      font-size: 16px;
+      height: 100px;
+    }
+  }
+}
+
+@include breakpoint($XLarge) {
+  .contactContainer {
+    padding: 0;
+  }
+  .container {
+    justify-content: space-between;
+  }
+  .contactUsImageContainer {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
