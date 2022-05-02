@@ -9,7 +9,7 @@ const MenuToggle = ({ handleToggle, menuOpen }) => {
   const spanVariantsUpper = {
     open: {
       rotate: -45,
-      y: 3.5,
+      y: 3,
       transition: { duration: 0.2 },
     },
     closed: {

@@ -6,6 +6,7 @@
   width: 92%;
   margin-left: 8%;
   margin-right: 0;
+  color: #a98d6e;
   overflow: hidden;
   .heading {
     display: flex;
@@ -69,12 +70,13 @@
           background: none;
           border: none;
           font-size: 1.2rem;
+          color: #a98d6e;
           cursor: pointer;
         }
       }
       .reviewAuthorContainer {
         margin-top: 5px;
-        height: 21px;
+        height: 20px;
         overflow: hidden;
         position: relative;
         .reviewAuthorInnerContainer {
@@ -146,7 +148,7 @@
           }
         }
         .reviewAuthorContainer {
-          height: 23px;
+          height: 20px;
           .reviewAuthorInnerContainer {
             justify-content: space-between;
             .reviewAuthor {
@@ -197,7 +199,7 @@
           }
         }
         .reviewAuthorContainer {
-          height: 25px;
+          height: 24px;
           .reviewAuthorInnerContainer {
             .reviewAuthor {
               font-size: 18px;

@@ -14,3 +14,44 @@
     font-size: 200px;
   }
 }
+
+@include breakpoint(600px) {
+  .galleryGrid {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 100px 100px;
+    flex-wrap: wrap;
+    margin-bottom: 250px;
+    .cardContainer:nth-child(1) {
+      width: calc(35% - 50px);
+    }
+    .cardContainer:nth-child(2) {
+      width: calc(65% - 50px);
+    }
+    .cardContainer:nth-child(3) {
+      width: calc(65% - 50px);
+    }
+    .cardContainer:nth-child(4) {
+      width: calc(35% - 50px);
+    }
+    .cardContainer:nth-child(5) {
+      width: calc(35% - 50px);
+    }
+    .cardContainer:nth-child(6) {
+      width: calc(65% - 50px);
+    }
+    .cardContainer:nth-child(7) {
+      width: calc(65% - 50px);
+    }
+    .cardContainer:nth-child(8) {
+      width: calc(35% - 50px);
+    }
+    .cardContainer:nth-child(9) {
+      width: calc(35% - 50px);
+    }
+    .cardContainer:nth-child(10) {
+      width: calc(65% - 50px);
+    }
+  }
+}

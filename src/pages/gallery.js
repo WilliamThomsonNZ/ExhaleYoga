@@ -15,7 +15,9 @@ const Gallery = ({ data }) => {
       </h1>
       <section className={styles.galleryGrid}>
         {images.map(img => (
-          <GatsbyImage image={img.gatsbyImageData} />
+          <div className={styles.cardContainer}>
+            <GatsbyImage image={img.gatsbyImageData} />
+          </div>
         ))}
       </section>
     </Layout>

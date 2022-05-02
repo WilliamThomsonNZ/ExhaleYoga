@@ -45,7 +45,7 @@ const Header = ({ handleMenuToggle, menuOpen }) => {
         <motion.div className={styles.logoContainer}>
           <Link to={"/"} className={styles.logo}>
             <StaticImage
-              src="../../imgs/Exhale_Logo_Black.png"
+              src="../../imgs/mainLogoBrown.png"
               alt={"Exhale Yoga Studio"}
               class={styles.logo}
             />

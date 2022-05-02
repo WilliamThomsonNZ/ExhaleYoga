@@ -1,0 +1,56 @@
+@import "../../../styles/global.scss";
+@import "../../../styles/typography.css";
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  margin-top: 75px;
+}
+.label {
+  text-align: center;
+  font-size: 32px;
+  font-weight: normal;
+  font-family: "alia";
+  line-height: 1.1;
+  color: #a98d6e;
+  margin: 0;
+}
+
+.information {
+  text-align: center;
+  font-family: "Arimo";
+  font-size: 14px;
+  margin-top: 10px;
+  color: #a98d6e;
+}
+
+.image {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 50px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.whiteContainer {
+  .information {
+    margin-bottom: 0;
+  }
+}
+@include breakpoint($large) {
+  .label {
+    font-size: 48px;
+  }
+  .image {
+    width: 75px;
+  }
+}
+
+.whiteContainer {
+  .label,
+  .information {
+    color: #fff;
+  }
+}

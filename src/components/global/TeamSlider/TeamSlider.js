@@ -19,7 +19,7 @@ export const TeamCard = ({ name, title, image, alt, story, scrollSpeed }) => {
     animate: {
       rotate: -90,
       scale: 0.8,
-      y: -100,
+      y: -80,
       transition: {
         ease: [0.405, 0, 0.025, 1],
         duration: 0.8,

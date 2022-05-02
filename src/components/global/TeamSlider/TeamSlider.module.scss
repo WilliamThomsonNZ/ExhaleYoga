@@ -16,12 +16,12 @@
   }
   .name {
     position: absolute;
-    left: -35px;
-    bottom: 4%;
+    left: -20px;
+    bottom: -2%;
     font-family: "alia";
     color: #fff;
     font-weight: normal;
-    font-size: 25px;
+    font-size: 35px;
   }
   .story {
     position: absolute;
@@ -29,8 +29,9 @@
     left: 15px;
     width: 80%;
     color: #fff;
+    line-height: 1.7;
     font-family: "Arimo";
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 .container {
@@ -40,7 +41,16 @@
     padding: 115px 0;
     margin-top: 0;
     background: #c2cfb8;
+    .controls {
+      color: #fff;
+    }
+    .arrowContainer {
+      button {
+        color: #fff;
+      }
+    }
   }
+
   //padding-left: 5%;
   .controls {
     display: flex;
@@ -49,12 +59,14 @@
     padding: 0 5%;
     justify-content: space-between;
     margin-bottom: 40px;
+    color: #a98d6e;
   }
   .title {
     font-family: "Arimo";
     font-size: 16px;
     font-weight: 600;
     margin-right: 20px;
+    color: #a98d6e;
   }
   .arrowContainer {
     display: inline-block;
@@ -62,13 +74,15 @@
       background: none;
       border: none;
       font-size: 25px;
+      color: #a98d6e;
       cursor: pointer;
       font-weight: bold;
     }
   }
-  .isEventSlider {
+  &.isEventSlider {
     .loadingBarOuter {
       .loadingBarInner {
+        background-color: #fff;
       }
     }
   }
@@ -80,7 +94,7 @@
     .loadingBarInner {
       width: 25%;
       height: 100%;
-      background-color: black;
+      background-color: #a98d6e;
       border-radius: 15px;
     }
   }
@@ -94,7 +108,7 @@
 }
 @include breakpoint(600px) {
   .container {
-    margin-top: 15vw;
+    margin-top: 7vw;
     &.isEventSlider {
       padding-top: 7.5vw;
       padding-bottom: 7.5vw;
@@ -119,22 +133,10 @@
 
 @include breakpoint($large) {
   .teamCardContainer {
-    //height: 30vw;
-    //margin-left: 60px;
     min-width: 300px;
-    // .name {
-    //   left: -40px;
-    //   bottom: 4%;
-    //   font-size: 40px;
-    // }
-    // .story {
-    //   left: 15px;
-    //   font-size: 15px;
-    // }
   }
   .container {
     padding: 0;
-    // margin-left: calc((100vw - 1500px) / 2);
   }
 }
 

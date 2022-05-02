@@ -80,10 +80,11 @@ const Footer = () => {
           <nav className={styles.contactDetailsContainer}>
             <div className={styles.internalLinks}>
               <Link to="/">Home</Link>
-              <Link to="/timetable">Timetable</Link>
+              <Link to="/our-space">Hire our space</Link>
+              <a href="/time-table-events">Timetable &amp; Events</a>
               <Link to="/pricing">Pricing</Link>
               <Link to="/our-team">Meet the team</Link>
-              <Link to="/our-space">Our space</Link>
+              <Link to="/gallery">Gallery</Link>
               <Link to="/contact">Contact</Link>
             </div>
             <div className={styles.externalLinks}>

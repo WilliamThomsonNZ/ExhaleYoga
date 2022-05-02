@@ -42,7 +42,7 @@ const PageHero = ({ content, container }) => {
           animate={"animate"}
         >
           <StaticImage
-            src="../../../imgs/subPageHero.jpg"
+            src="../../../imgs/mainLandscape.jpg"
             alt="Exhale yoga studio"
             className={styles.mainImage}
             placeholder="none"
@@ -50,7 +50,7 @@ const PageHero = ({ content, container }) => {
         </motion.div>
       </div>
       <StaticImage
-        src="../../../imgs/subPageSubHero.jpg"
+        src="../../../imgs/test.jpg"
         alt="Exhale yoga studio"
         className={styles.subImage}
         data-scroll

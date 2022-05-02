@@ -9,19 +9,23 @@
   font-size: 16px;
   position: relative;
   font-weight: 500;
+  color: #a98d6e;
   padding-bottom: 5px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #a98d6e;
   &.whiteButton {
     color: #fff;
     border-bottom: 1px solid #fff;
+    .arrowIcon {
+      color: #fff;
+    }
   }
   font-family: "Arimo", sans-serif;
-  color: inherit;
   .arrowIcon {
     font-size: 14px;
     font-weight: lighter;
     display: block;
     transform: rotate(-90deg);
+    color: #a98d6e;
     &:first-of-type {
       margin-bottom: 10px;
     }
@@ -44,6 +48,9 @@
     color: #c2cfb8;
     padding: 13px 25px;
     border: none;
+    .arrowIcon {
+      color: #c2cfb8;
+    }
     .arrowContainer {
       margin-bottom: 3px;
     }
