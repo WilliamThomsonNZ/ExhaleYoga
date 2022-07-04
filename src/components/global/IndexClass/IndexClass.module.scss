@@ -24,6 +24,9 @@
   position: relative !important;
   color: #fff;
   // margin-bottom: 30px;
+  .classImage {
+    height: 100%;
+  }
   .index {
     position: absolute;
     right: 15px;
@@ -106,24 +109,16 @@
   }
 }
 @include breakpoint($large) {
-  .classTileContainer {
-    flex-wrap: nowrap;
-  }
-  .classTile {
-    &:nth-child(even) {
-      margin-bottom: 55px;
-    }
-    &:nth-child(odd) {
-      margin-top: 55px;
-    }
-  }
   .container {
     padding: 0;
     position: relative;
   }
-  .tileImage {
-    aspect-ratio: 4/6;
+  .classTile {
+    width: calc(100% / 3);
   }
+  // .tileImage {
+  //   aspect-ratio: 4/6;
+  // }
   .textContent {
     font-size: 48px;
     width: 90%;
@@ -142,4 +137,18 @@
   .textContent {
     font-size: 64px;
   }
+}
+
+@include breakpoint(1850px) {
+  // .classTileContainer {
+  //   flex-wrap: nowrap;
+  // }
+  // .classTile {
+  //   &:nth-child(even) {
+  //     margin-bottom: 55px;
+  //   }
+  //   &:nth-child(odd) {
+  //     margin-top: 55px;
+  //   }
+  // }
 }

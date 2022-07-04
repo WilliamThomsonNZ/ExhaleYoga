@@ -13,7 +13,7 @@ const OurTeam = () => {
   const containerRef = useRef(null)
   return (
     <Layout>
-      <PageHero content={heroContent} container={containerRef.current} />
+      <PageHero content={heroContent} page={"team"} title={"Our Space"} />
       <section className={styles.teamMissionStatement}>
         <p className={styles.content}>
           We are a spirited and dynamic yoga community, your financial

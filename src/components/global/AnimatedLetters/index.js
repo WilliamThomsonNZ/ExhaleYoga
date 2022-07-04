@@ -21,6 +21,7 @@ const AnimatedLetters = ({ title }) => {
     },
   }
 
+  console.log([...title])
   return (
     <motion.span
       className={styles.rowTitle}
@@ -30,9 +31,7 @@ const AnimatedLetters = ({ title }) => {
     >
       {[...title].map((letter, index) => (
         <motion.span
-          className={`${styles.rowLetter} ${
-            letter == "&" ? styles.amp : undefined
-          }`}
+          className={styles.rowLetter}
           variants={letterAni}
           key={index}
         >

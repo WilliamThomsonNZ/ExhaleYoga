@@ -5,18 +5,16 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from "../styles/Gallery.module.scss"
 import AnimatedLetters from "../components/global/AnimatedLetters"
 const Gallery = ({ data }) => {
-  const images = data.allContentfulGalleryImages.edges[0].node.galleryImages
-
-  console.log(images[0])
+  const images = data.allFile.edges
   return (
     <Layout>
       <h1 className={styles.heading}>
         <AnimatedLetters title={"gallery"} />
       </h1>
       <section className={styles.galleryGrid}>
-        {images.map(img => (
+        {images.map(node => (
           <div className={styles.cardContainer}>
-            <GatsbyImage image={img.gatsbyImageData} />
+            <GatsbyImage image={node.node.childImageSharp.gatsbyImageData} />
           </div>
         ))}
       </section>
@@ -25,11 +23,18 @@ const Gallery = ({ data }) => {
 }
 export const query = graphql`
   query galleryQuery {
-    allContentfulGalleryImages {
+    allFile(filter: { relativeDirectory: { eq: "heroGallery" } }) {
       edges {
         node {
-          galleryImages {
-            gatsbyImageData
+          childImageSharp {
+            fluid {
+              aspectRatio
+            }
+            gatsbyImageData(
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+              layout: CONSTRAINED
+            )
           }
         }
       }

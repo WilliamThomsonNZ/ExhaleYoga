@@ -8,6 +8,7 @@ import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import MenuToggle from "./MenuToggle"
 import { StaticImage } from "gatsby-plugin-image"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 const Header = ({ handleMenuToggle, menuOpen }) => {
   const headerVariants = {
     initial: { opacity: 0, y: -50 },
@@ -76,12 +77,12 @@ const Header = ({ handleMenuToggle, menuOpen }) => {
 
         <nav className={styles.desktopNavigationContainer}>
           <ul className={styles.desktopNavigationItems}>
-            <Link
-              to="/pricing"
+            <a
+              href="/pricing#introOffer"
               className={`${styles.navigationItem} ${styles.introductoryNavItem}`}
             >
-              Introductory offer
-            </Link>
+              $30 Introductory offer.
+            </a>
           </ul>
         </nav>
         <MenuToggle handleToggle={handleMenuToggle} menuOpen={menuOpen} />

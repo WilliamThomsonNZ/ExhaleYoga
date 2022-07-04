@@ -11,54 +11,45 @@ const PricingContent = () => {
   const width = useWindowWidth(200)
   return (
     <>
-      <section className={styles.introOfferContainer}>
+      <section className={styles.introOfferContainer} id={"introOffer"}>
         <div className={styles.introContent}>
           <h6 className={styles.pricingTitle}>
-            Introductory offer for new visitors.
+            Introductory offer for new visitors
           </h6>
           <p className={styles.introCopy}>
-            The studio is influenced by the natural beauty of New Zealand. We
-            encourage you to bring your practice to the great outdoors close to
-            Hobsonville and West Auckland: Catalina Bay, around the Auckland
-            harbour, Waitakere Ranges, or the stunning West Coast beaches.
+            Come experience a space where you can connect, breathe and be for
+            the next 14 days. For first-time yoga students our introduction to
+            exhale yoga is only $30 for 2 weeks of unlimited yoga. To sign up,
+            create an account in Mindbody, book your first class and select the
+            intro offer or come into the studio to sign up.
           </p>
           <ButtonArrow label={"Book now"} isWhite />
         </div>
         <StaticImage
-          src="../imgs/1.jpg"
+          src="../imgs/siteImages/introOffer-min.jpg"
           alt={"Exhale Yoga Studio"}
+          placeholder={"blurred"}
           className={styles.pricingImage}
-          data-scroll
-          data-scroll-speed="2"
         />
       </section>
       <section className={styles.membershipContainer}>
-        <h6 className={styles.pricingTitle}>
-          We are a spirited and dynamic yoga community, your financial
-          commitment to YinYoga Napier supports us to widen and reach.
-          {width > 1150 &&
-            " The studio is influenced by the natural beauty of New Zealand."}
-        </h6>
+        <h6 className={styles.pricingTitle}>Join our community</h6>
         <div className={styles.membershipsWrapper}>
           <div className={styles.membership}>
-            <h6 className={styles.membershipTitle}>
-              Three Month Unlimited Membership
-            </h6>
+            <h6 className={styles.membershipTitle}>One month membership:</h6>
             <p className={styles.membershipCopy}>
-              The studio is influenced by the natural beauty of New Zealand. We
-              encourage you to bring your practice to the great outdoors close
-              to Hobsonville and West Auckland
+              Unlimited yoga classes for $165 one-off payment. To purchase,
+              create an account, book your first class and select the one month
+              membership or come into the studio to purchase.
             </p>
             <ButtonArrow label={"Book now"} />
           </div>
           <div className={styles.membership}>
-            <h6 className={styles.membershipTitle}>
-              One Month Unlimited Membership
-            </h6>
+            <h6 className={styles.membershipTitle}>Three month membership:</h6>
             <p className={styles.membershipCopy}>
-              The studio is influenced by the natural beauty of New Zealand. We
-              encourage you to bring your practice to the great outdoors close
-              to Hobsonville and West Auckland
+              Unlimited yoga classes for $420 one-off payment. To purchase,
+              create an account, book your first class and select the three
+              month membership or come into the studio to purchase.
             </p>
             <ButtonArrow label={"Book now"} />
           </div>
@@ -66,16 +57,14 @@ const PricingContent = () => {
       </section>
       <section className={styles.pricingTableContainer}>
         <StaticImage
-          src="../imgs/subPageSubHero.jpg"
+          src="../imgs/pricingContent3.jpg"
           alt={"Exhale Yoga Studio"}
           className={styles.pricingTableImage}
           data-scroll
           data-scroll-speed="2"
         />
         <div className={styles.tableContent}>
-          <h6 className={styles.pricingTitle}>
-            Pricing table for new and existing vistors.
-          </h6>
+          <h6 className={styles.pricingTitle}>Pricing</h6>
           <ul className={styles.priceList}>
             <li className={styles.title}>Class passes</li>
             <li>

@@ -1,5 +1,6 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React, { useEffect, useRef, useState } from "react"
+import { StaticQuery, graphql } from "gatsby"
 import * as styles from "./ImageSlider.module.scss"
 import { motion, useAnimation } from "framer-motion"
 import useWindowWidth from "../../../utils/hooks/useWindowWidth"
@@ -11,7 +12,6 @@ const ImageSlider = ({ data }) => {
   let windowWidth = useWindowWidth(200)
   const [sliderWidth, setSliderWidth] = useState(0)
   const [animationProgress, setAnimationPrgogress] = useState(0)
-
   useEffect(() => {
     setSliderWidth(slider.current.offsetWidth)
   }, [windowWidth])
@@ -29,7 +29,7 @@ const ImageSlider = ({ data }) => {
       x: `-${sliderWidth - sliderWidth / 4}px`,
       transition: {
         repeat: Infinity,
-        duration: 160,
+        duration: 500,
         ease: ["linear"],
       },
     },
@@ -63,7 +63,7 @@ const ImageSlider = ({ data }) => {
         >
           <GatsbyImage
             image={node.node.childImageSharp.gatsbyImageData}
-            alt={"testimng"}
+            alt={"Gallery image"}
             key={index}
             className={
               imageWidth > imageHeight
@@ -96,4 +96,30 @@ const ImageSlider = ({ data }) => {
   )
 }
 
-export default ImageSlider
+export default function ImageSliderGallery(props) {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allFile(filter: { relativeDirectory: { eq: "heroGallery" } }) {
+            edges {
+              node {
+                childImageSharp {
+                  fluid {
+                    aspectRatio
+                  }
+                  gatsbyImageData(
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    layout: CONSTRAINED
+                  )
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => <ImageSlider data={data} />}
+    />
+  )
+}

@@ -43,9 +43,7 @@ const Contact = ({ data }) => {
           <p className={styles.address}>
             35 Hastings Street, Napier South, Napier 4110 New Zealand
           </p>
-          <a href={"#"} className={styles.contactLinks}>
-            +64 027 3319 027
-          </a>
+
           <a href={"#"} className={styles.contactLinks}>
             hello@exhaleyoga.co.nz
           </a>
@@ -99,10 +97,9 @@ const Contact = ({ data }) => {
       </main>
       <div className={styles.contactUsImageContainer}>
         <StaticImage
-          src="../imgs/subPageSubHero.jpg"
+          src="../imgs/siteImages/contact-min.jpg"
           alt={"Exhale Yoga Studio"}
           className={styles.contactUsImage}
-          f
         />
       </div>
     </Layout>

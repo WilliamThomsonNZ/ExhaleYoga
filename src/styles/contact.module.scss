@@ -3,6 +3,7 @@
 
 .contactContainer {
   padding: 50px 8%;
+
   .heading {
     margin: 0;
     color: #a98d6e;
@@ -43,8 +44,7 @@
 }
 .contactUsImageContainer {
   margin-top: 115px;
-  padding: 0 8%;
-  max-width: 1500px;
+  margin-bottom: -115px;
 }
 .contactForm {
   padding: 50px 8%;
@@ -68,6 +68,11 @@
   }
 }
 
+@include breakpoint(600px) {
+  .contactUsImageContainer {
+    margin-bottom: -15vw;
+  }
+}
 @include breakpoint($large) {
   .container {
     display: flex;

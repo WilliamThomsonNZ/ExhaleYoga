@@ -9,13 +9,13 @@ import { graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import ButtonArrow from "../components/global/ButtonArrow/ButtonArrow"
-const OurTeam = ({ data }) => {
+const OurTeam = () => {
   const heroContent =
     "Our space is avaliable to hire for functions and workshops."
   const containerRef = useRef(null)
   return (
     <Layout>
-      <PageHero content={heroContent} container={containerRef.current} />
+      <PageHero content={heroContent} page={"hireSpace"} title={"Our Space"} />
       <div className={styles.pageContainer}>
         <section className={styles.pageContent}>
           <h2 className={styles.title}>
@@ -35,31 +35,10 @@ const OurTeam = ({ data }) => {
           </p>
           <ButtonArrow label={"Get in touch"} />
         </section>
-        <ImageSlider data={data} />
+        <ImageSlider />
       </div>
     </Layout>
   )
 }
 
 export default OurTeam
-
-export const query = graphql`
-  query MyQuery123 {
-    allFile(filter: { relativeDirectory: { eq: "heroGallery" } }) {
-      edges {
-        node {
-          childImageSharp {
-            fluid {
-              aspectRatio
-            }
-            gatsbyImageData(
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-              layout: CONSTRAINED
-            )
-          }
-        }
-      }
-    }
-  }
-`

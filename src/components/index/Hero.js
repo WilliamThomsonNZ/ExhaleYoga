@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { StaticImage } from "gatsby-plugin-image"
 import ButtonArrow from "../global/ButtonArrow/ButtonArrow"
 import AnimatedLetters from "../global/AnimatedLetters/index"
-
+import { Link } from "gatsby"
 //Text animation
 
 const subContainer = {
@@ -54,19 +54,21 @@ const Hero = () => {
       },
     },
   }
+
   return (
     <>
       <div className={styles.heroContainer}>
         <div className={styles.heroTextContainer}>
           <h1 className={styles.heroMainText}>
-            <div className={`${styles.bannerRow} ${styles.desktopBanner}`}>
-              <AnimatedLetters title={"Yoga &  space"} />
-            </div>
-            <div className={`${styles.bannerRow} ${styles.mobileBanner}`}>
-              <AnimatedLetters title={"Yoga &"} />
-            </div>
-            <div className={`${styles.bannerRow} ${styles.mobileBanner}`}>
-              <AnimatedLetters title={"Space"} />
+            <div classsName={styles.desktopBanner}>
+              <motion.span
+                className={styles.title}
+                variants={image}
+                initial={"initial"}
+                animate={"animate"}
+              >
+                Yoga &amp; Workshop space
+              </motion.span>
             </div>
           </h1>
           <motion.div
@@ -77,11 +79,14 @@ const Hero = () => {
           >
             <div className={styles.subTextContainer}>
               <motion.p className={styles.heroSubText}>
-                We are an urban sanctuary in the heart of Napier offering yoga
-                classes and workshops that put you and your wellbeing first.
+                We are an urban sanctuary in the heart of Napier that puts you
+                and your wellbeing first. We offer yoga classes, workshops and
+                space hire. We are your space to breathe.
               </motion.p>
             </div>
-            <ButtonArrow label={"Book class"} />
+            <a href={"/time-table-events/"}>
+              <ButtonArrow label={"Book a class"} />
+            </a>
           </motion.div>
         </div>
       </div>
@@ -101,10 +106,10 @@ const Hero = () => {
             layoutId="main-image"
           >
             <StaticImage
-              src="../../imgs/heroMain.jpg"
+              src="../../imgs/siteImages/homeHero-min.jpg"
               alt="Exhale yoga studio"
               className={styles.heroImage}
-              placeholder="none"
+              placeholder="blurred"
             />
           </motion.div>
         </motion.div>

@@ -4,7 +4,7 @@
 .rowLetter {
   position: relative;
   display: inline-block;
-  white-space: nowrap;
+  // white-space: nowrap;
   font-family: "alia", serif;
   font-variant: normal;
   font-weight: 300;
@@ -23,7 +23,7 @@
   overflow: hidden;
 }
 
-@include breakpoint($large) {
+@include breakpoint($MLarge) {
   .rowLetter {
     font-size: 200px;
   }

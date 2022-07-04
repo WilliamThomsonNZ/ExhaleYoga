@@ -143,13 +143,18 @@ const TimeTable = ({ data }) => {
         }
 
 
-
-
     `}</style>
       </Helmet>
       <Layout>
-        <PageHero content={heroContent} />
-        <div className={`${styles.widgetContainer} mindbodyContainer`}>
+        <PageHero
+          content={heroContent}
+          page={"timetable"}
+          title={"Yoga & Workshops"}
+        />
+        <div
+          className={`${styles.widgetContainer} mindbodyContainer`}
+          id={"timeTableContainer"}
+        >
           <healcode-widget
             data-type="schedules"
             data-widget-partner="object"
@@ -158,15 +163,15 @@ const TimeTable = ({ data }) => {
           ></healcode-widget>
         </div>
         <section className={styles.teamMissionStatement}>
-          <p className={styles.content}>
+          {/* <p className={styles.content}>
             We are a spirited and dynamic yoga community, your financial
             commitment to YinYoga Napier supports us to widen and reach. The
             studio is influenced by the natural beauty of New Zealand.
-          </p>
+          </p> */}
           <Emblem label={"View our latest events below"} isWhite />
         </section>
         <EventSlider data={data} />
-        <ImageSlider data={data} />
+        <ImageSlider />
       </Layout>
     </>
   )
@@ -176,22 +181,6 @@ export default TimeTable
 
 export const query = graphql`
   query timetableQuery {
-    allFile(filter: { relativeDirectory: { eq: "heroGallery" } }) {
-      edges {
-        node {
-          childImageSharp {
-            fluid {
-              aspectRatio
-            }
-            gatsbyImageData(
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-              layout: CONSTRAINED
-            )
-          }
-        }
-      }
-    }
     allContentfulEvent {
       nodes {
         eventName

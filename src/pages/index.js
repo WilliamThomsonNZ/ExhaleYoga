@@ -19,7 +19,7 @@ export default function Home({ data }) {
   return (
     <Layout>
       <Hero />
-      <IndexClass />
+      <IndexClass data={data} />
       <HireSpace />
       <Testimonials data={data} />
       <ImageSlider data={data} />
@@ -28,7 +28,23 @@ export default function Home({ data }) {
 }
 export const query = graphql`
   query MyQuery {
-    allFile(filter: { relativeDirectory: { eq: "heroGallery" } }) {
+    gallery: allFile(filter: { relativeDirectory: { eq: "heroGallery" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              aspectRatio
+            }
+            gatsbyImageData(
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+              layout: CONSTRAINED
+            )
+          }
+        }
+      }
+    }
+    class: allFile(filter: { relativeDirectory: { eq: "classPhotos" } }) {
       edges {
         node {
           childImageSharp {

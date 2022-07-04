@@ -15,6 +15,17 @@
     font-size: 26px;
     margin-bottom: 40px;
   }
+  .title {
+    font-family: "alia", serif;
+    font-variant: normal;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 100px;
+    line-height: 1;
+    color: #a98d6e;
+    word-spacing: -30px;
+    display: block;
+  }
   @media (min-width: 500px) {
     .desktopBanner {
       display: block;
@@ -73,6 +84,11 @@
       height: calc(56.7vw);
       max-width: 474px;
       max-height: 600px;
+    }
+  }
+  @include breakpoint($MLarge) {
+    .title {
+      font-size: 200px;
     }
   }
   @include breakpoint($XLarge) {

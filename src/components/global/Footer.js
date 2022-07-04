@@ -96,7 +96,6 @@ const Footer = () => {
             </div>
             <div className={styles.contactLinks}>
               <a href="mailto:#">team@exhaleyoga.co.nz</a>
-              <a href="tel:0273319027">027 3319 027</a>
             </div>
           </nav>
           <div className={styles.copyContainer}>

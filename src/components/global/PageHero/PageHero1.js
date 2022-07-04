@@ -1,12 +1,11 @@
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
-import React, { useEffect } from "react"
-import { useState } from "react"
+import { GatsbyImage } from "gatsby-plugin-image"
+import React from "react"
 import * as styles from "./pageHero.module.scss"
-import { useLocomotiveScroll } from "react-locomotive-scroll"
 import { motion } from "framer-motion"
 import AnimatedLetters from "../AnimatedLetters"
+import { StaticQuery, graphql } from "gatsby"
 
-const PageHero = ({ content, container }) => {
+const PageHero = ({ data, page, title }) => {
   const heroImageVariants = {
     initial: {
       y: 100,
@@ -21,19 +20,45 @@ const PageHero = ({ content, container }) => {
       },
     },
   }
+  let imagesObject
+  switch (page) {
+    case "timetable":
+      imagesObject = data.timetable
+      break
+    case "pricing":
+      imagesObject = data.pricing
+      break
+    case "hireSpace":
+      imagesObject = data.hireSpace
+      break
+    case "team":
+      imagesObject = data.team
+      break
+    default:
+      imagesObject = data.pricing
+      break
+  }
 
+  console.log(imagesObject, data)
   return (
     <div className={styles.pageHeroContainer}>
       <div className={styles.contentContainer}>
-        <div className={`${styles.bannerRow} ${styles.desktopBanner}`}>
-          <AnimatedLetters title={"Yoga & space"} />
+        <div classsName={styles.desktopBanner}>
+          <motion.span
+            className={styles.title}
+            variants={heroImageVariants}
+            initial={"initial"}
+            animate={"animate"}
+          >
+            {title}
+          </motion.span>
+        </div>
+        {/* <div className={`${styles.bannerRow} ${styles.desktopBanner}`}>
+          <AnimatedLetters title={title} />
         </div>
         <div className={`${styles.bannerRow} ${styles.mobileBanner}`}>
-          <AnimatedLetters title={"Yoga &"} />
-        </div>
-        <div className={`${styles.bannerRow} ${styles.mobileBanner}`}>
-          <AnimatedLetters title={"Space"} />
-        </div>
+          <AnimatedLetters title={title} />
+        </div> */}
       </div>
       <div className={styles.heroImageContainer}>
         <motion.div
@@ -41,23 +66,119 @@ const PageHero = ({ content, container }) => {
           initial={"initial"}
           animate={"animate"}
         >
-          <StaticImage
-            src="../../../imgs/mainLandscape.jpg"
+          <GatsbyImage
+            image={
+              imagesObject.edges[0].node.name == "main"
+                ? imagesObject.edges[0].node.childImageSharp.gatsbyImageData
+                : imagesObject.edges[1].node.childImageSharp.gatsbyImageData
+            }
             alt="Exhale yoga studio"
             className={styles.mainImage}
             placeholder="none"
           />
         </motion.div>
       </div>
-      <StaticImage
-        src="../../../imgs/test.jpg"
+      <GatsbyImage
+        image={
+          imagesObject.edges[0].node.name != "main"
+            ? imagesObject.edges[0].node.childImageSharp.gatsbyImageData
+            : imagesObject.edges[1].node.childImageSharp.gatsbyImageData
+        }
         alt="Exhale yoga studio"
         className={styles.subImage}
-        data-scroll
-        data-scroll-speed="2"
       />
     </div>
   )
 }
 
-export default PageHero
+export default function Hero(props) {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          timetable: allFile(
+            filter: { relativeDirectory: { eq: "heroImages/timetable" } }
+          ) {
+            edges {
+              node {
+                name
+                childImageSharp {
+                  gatsbyImageData(
+                    formats: WEBP
+                    layout: CONSTRAINED
+                    placeholder: BLURRED
+                  )
+                }
+              }
+            }
+          }
+          pricing: allFile(
+            filter: { relativeDirectory: { eq: "heroImages/pricing" } }
+          ) {
+            edges {
+              node {
+                name
+                childImageSharp {
+                  gatsbyImageData(
+                    formats: WEBP
+                    layout: CONSTRAINED
+                    placeholder: BLURRED
+                  )
+                }
+              }
+            }
+          }
+          hireSpace: allFile(
+            filter: { relativeDirectory: { eq: "heroImages/hireSpace" } }
+          ) {
+            edges {
+              node {
+                name
+                childImageSharp {
+                  gatsbyImageData(
+                    formats: WEBP
+                    layout: CONSTRAINED
+                    placeholder: BLURRED
+                  )
+                }
+              }
+            }
+          }
+          hireSpace: allFile(
+            filter: { relativeDirectory: { eq: "heroImages/hireSpace" } }
+          ) {
+            edges {
+              node {
+                name
+                childImageSharp {
+                  gatsbyImageData(
+                    formats: WEBP
+                    layout: CONSTRAINED
+                    placeholder: BLURRED
+                  )
+                }
+              }
+            }
+          }
+          team: allFile(
+            filter: { relativeDirectory: { eq: "heroImages/team" } }
+          ) {
+            edges {
+              node {
+                name
+                childImageSharp {
+                  gatsbyImageData(
+                    formats: WEBP
+                    layout: CONSTRAINED
+                    placeholder: BLURRED
+                  )
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => <PageHero data={data} {...props} />}
+    />
+  )
+}

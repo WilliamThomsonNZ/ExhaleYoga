@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react"
 import * as styles from "./TeamSlider.module.scss"
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { AnimatePresence, motion } from "framer-motion"
+import { StaticQuery, graphql } from "gatsby"
 import useWindowWidth from "../../../utils/hooks/useWindowWidth"
 import Slider from "react-slick"
-export const TeamCard = ({ name, title, image, alt, story, scrollSpeed }) => {
+export const TeamCard = ({ name, alt, story, gatsbyImage }) => {
+  console.log(gatsbyImage)
   const [isHovering, setIsHovering] = useState(false)
   const nameVariants = {
     initial: {
@@ -50,12 +52,15 @@ export const TeamCard = ({ name, title, image, alt, story, scrollSpeed }) => {
       onMouseLeave={() => setIsHovering(false)}
       className={styles.teamCardContainer}
     >
-      <StaticImage
-        src="../../../imgs/manTest.jpg"
+      <div className={styles.cardImageContainer}></div>
+      <GatsbyImage
         alt={alt}
+        placeholder={"blurred"}
+        image={gatsbyImage}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       />
+
       <motion.h6
         variants={nameVariants}
         animate={isHovering ? "animate" : "initial"}
@@ -75,58 +80,74 @@ export const TeamCard = ({ name, title, image, alt, story, scrollSpeed }) => {
   )
 }
 
-const TeamSlider = () => {
+const TeamSlider = ({ data }) => {
   const story =
     "The studio is influenced by the natural beauty of New Zealand. We encourage you to bring your practice to the great outdoors."
+  data.allFile.edges.reverse()
   const teamMembers = [
     <TeamCard
-      name="James Doe"
+      name="Minnie"
       title="Yoga Teacher"
       story={story}
       alt={"man"}
       key="1"
+      gatsbyImage={data.allFile.edges[0].node.childImageSharp.gatsbyImageData}
     />,
     <TeamCard
-      name="James Doe"
+      name="Carly"
       title="Yoga Teacher"
       story={story}
       alt={"man"}
       key="2"
+      gatsbyImage={data.allFile.edges[1].node.childImageSharp.gatsbyImageData}
     />,
     <TeamCard
-      name="James Doe"
+      name="Helen"
       title="Yoga Teacher"
       story={story}
       alt={"man"}
       key="3"
+      gatsbyImage={data.allFile.edges[2].node.childImageSharp.gatsbyImageData}
     />,
     <TeamCard
-      name="James Doe"
+      name="Jessie"
       title="Yoga Teacher"
       story={story}
       alt={"man"}
       key="4"
+      gatsbyImage={data.allFile.edges[3].node.childImageSharp.gatsbyImageData}
     />,
     <TeamCard
-      name="James Doe"
+      name="Lissy"
       title="Yoga Teacher"
       story={story}
       alt={"man"}
       key="5"
+      gatsbyImage={data.allFile.edges[4].node.childImageSharp.gatsbyImageData}
     />,
     <TeamCard
-      name="James Doe"
+      name="Mark"
       title="Yoga Teacher"
       story={story}
       alt={"man"}
       key="6"
+      gatsbyImage={data.allFile.edges[5].node.childImageSharp.gatsbyImageData}
     />,
     <TeamCard
-      name="James Doe"
+      name="Radha"
       title="Yoga Teacher"
       story={story}
       alt={"man"}
       key="7"
+      gatsbyImage={data.allFile.edges[6].node.childImageSharp.gatsbyImageData}
+    />,
+    <TeamCard
+      name="Tash"
+      title="Yoga Teacher"
+      story={story}
+      alt={"man"}
+      key="7"
+      gatsbyImage={data.allFile.edges[7].node.childImageSharp.gatsbyImageData}
     />,
   ]
   const [lastClick, setLastClick] = useState("")
@@ -199,6 +220,7 @@ const TeamSlider = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
   }
+  console.log(data)
   return (
     <>
       <section className={styles.container}>
@@ -224,12 +246,37 @@ const TeamSlider = () => {
             initial={false}
             animate={lastClick === "prev" ? "prev" : "next"}
           >
-            {teamMembers}
+            {teamMembers.map(member => member)}
           </motion.div>
         </div>
       </section>
     </>
   )
 }
-
-export default TeamSlider
+export default function FullTeamSlider(props) {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allFile(filter: { relativeDirectory: { eq: "teamPortraits" } }) {
+            edges {
+              node {
+                childImageSharp {
+                  fluid {
+                    aspectRatio
+                  }
+                  gatsbyImageData(
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    layout: CONSTRAINED
+                  )
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => <TeamSlider data={data} />}
+    />
+  )
+}

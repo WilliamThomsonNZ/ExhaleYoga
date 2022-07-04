@@ -7,6 +7,17 @@ body {
 .desktopBanner {
   display: none;
 }
+.title {
+  font-family: "alia", serif;
+  font-variant: normal;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 100px;
+  line-height: 1;
+  color: #a98d6e;
+  word-spacing: -30px;
+  display: block;
+}
 @media (min-width: 500px) {
   .desktopBanner {
     display: block;
@@ -15,6 +26,7 @@ body {
     display: none;
   }
 }
+
 .heroImageContainer {
   height: 90vh;
   position: relative;
@@ -171,6 +183,17 @@ body {
         }
       }
     }
+  }
+  @include breakpoint($MLarge) {
+    //height: 90vh;
+    .heroImageContainer {
+      .heroSubImage {
+        display: block;
+      }
+    }
+    .title {
+      font-size: 200px;
+    }
     .heroTextContainer {
       padding-left: 0;
       color: #000;
@@ -198,14 +221,6 @@ body {
             font-size: 28px;
           }
         }
-      }
-    }
-  }
-  @include breakpoint($MLarge) {
-    //height: 90vh;
-    .heroImageContainer {
-      .heroSubImage {
-        display: block;
       }
     }
   }

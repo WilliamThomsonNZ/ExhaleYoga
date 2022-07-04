@@ -17,32 +17,16 @@ const Pricing = ({ data }) => {
   const containerRef = useRef(null)
   return (
     <Layout>
-      <PageHero content={heroContent} container={containerRef.current} />
+      <PageHero content={heroContent} page={"pricing"} title={"Our Space"} />
       <div className={styles.pageContainer}>
         <PricingContent />
       </div>
-      <ImageSlider data={data} />
+      <ImageSlider />
     </Layout>
   )
 }
 export const query = graphql`
   query pricingQuery {
-    allFile(filter: { relativeDirectory: { eq: "heroGallery" } }) {
-      edges {
-        node {
-          childImageSharp {
-            fluid {
-              aspectRatio
-            }
-            gatsbyImageData(
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-              layout: CONSTRAINED
-            )
-          }
-        }
-      }
-    }
     allContentfulCtaHeader {
       edges {
         node {
