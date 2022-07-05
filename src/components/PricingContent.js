@@ -26,7 +26,7 @@ const PricingContent = () => {
           <ButtonArrow label={"Book now"} isWhite />
         </div>
         <StaticImage
-          src="../imgs/siteImages/introOffer-min.jpg"
+          src="../imgs/siteImages/introOffer.jpg"
           alt={"Exhale Yoga Studio"}
           placeholder={"blurred"}
           className={styles.pricingImage}
@@ -57,7 +57,7 @@ const PricingContent = () => {
       </section>
       <section className={styles.pricingTableContainer}>
         <StaticImage
-          src="../imgs/pricingContent3.jpg"
+          src="../imgs/siteImages/pricingTable.jpg"
           alt={"Exhale Yoga Studio"}
           className={styles.pricingTableImage}
           data-scroll

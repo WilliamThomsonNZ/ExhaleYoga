@@ -8,7 +8,7 @@ const HireSpace = () => {
     <div className={styles.container}>
       <div className={styles.imageContainer}>
         <StaticImage
-          src="../../imgs/hireSpaceIndex.jpg"
+          src="../../imgs/siteImages/hirespace.jpg"
           alt="Exhale yoga studio"
           className={styles.image}
           loading="lazy"

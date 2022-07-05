@@ -16,12 +16,14 @@ export default function Home({ data }) {
       : document.querySelector("body").classList.remove("loading")
   }, [loading])
   const containerRef = useRef(null)
+
   return (
     <Layout>
       <Hero />
       <IndexClass data={data} />
-      <HireSpace />
+
       <Testimonials data={data} />
+      <HireSpace />
       <ImageSlider data={data} />
     </Layout>
   )
@@ -47,10 +49,12 @@ export const query = graphql`
     class: allFile(filter: { relativeDirectory: { eq: "classPhotos" } }) {
       edges {
         node {
+          name
           childImageSharp {
             fluid {
               aspectRatio
             }
+
             gatsbyImageData(
               placeholder: BLURRED
               formats: [AUTO, WEBP, AVIF]

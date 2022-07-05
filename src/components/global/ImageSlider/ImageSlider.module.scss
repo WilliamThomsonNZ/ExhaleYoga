@@ -51,11 +51,11 @@
     min-height: 45vw;
     .imageContainer {
       .imageLandscape {
-        height: 25vw;
+        min-height: 25vw;
         min-width: 35vw;
       }
       .imagePortrait {
-        height: 45vw;
+        min-height: 45vw;
         min-width: 25vw;
       }
     }
@@ -64,11 +64,11 @@
     min-height: 40vw;
     .imageContainer {
       .imageLandscape {
-        height: 20vw;
+        min-height: 20vw;
         min-width: 30vw;
       }
       .imagePortrait {
-        height: 40vw;
+        min-height: 40vw;
         min-width: 20vw;
       }
     }

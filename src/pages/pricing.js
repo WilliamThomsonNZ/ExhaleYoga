@@ -17,7 +17,11 @@ const Pricing = ({ data }) => {
   const containerRef = useRef(null)
   return (
     <Layout>
-      <PageHero content={heroContent} page={"pricing"} title={"Our Space"} />
+      <PageHero
+        content={heroContent}
+        page={"pricing"}
+        title={"Invest in you"}
+      />
       <div className={styles.pageContainer}>
         <PricingContent />
       </div>

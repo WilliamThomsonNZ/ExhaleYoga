@@ -7,10 +7,13 @@ import { motion } from "framer-motion"
 import Emblem from "../Emblem"
 
 const IndexClass = ({ data }) => {
-  const images = data.class.edges.map(
-    node => node.node.childImageSharp.gatsbyImageData
-  )
-
+  const images = {}
+  data.class.edges.forEach(node => {
+    console.log(node)
+    images[node.node.name] = node.node.childImageSharp.gatsbyImageData
+  })
+  console.log(data)
+  console.log(images)
   const classes = [
     {
       tileName: "Vinyasa",
@@ -18,7 +21,7 @@ const IndexClass = ({ data }) => {
         "Vinyasa is a dynamic and fluid class that connects breath and movement. In this class you'll flow continuously between postures to strengthen the body, enhance flexibility and calm the mind.",
       link: "/pricing",
       scrollSpeed: "2",
-      img: "../../../imgs/indexClass1.jpg",
+      img: images.vinyasa,
     },
     {
       tileName: "Gentle Vinyasa",
@@ -26,7 +29,7 @@ const IndexClass = ({ data }) => {
         "Gentle Vinyasa is a slow and steady practice that's dynamic and fluid, connecting breath to movement. You will flow slowly between postures to tone the body, increase flexibility and steady the mind.",
       link: "/pricing",
       scrollSpeed: "1",
-      img: "../../../imgs/indexClass4.jpg",
+      img: images.gentleVinyasa,
     },
     {
       tileName: "Yin",
@@ -34,7 +37,7 @@ const IndexClass = ({ data }) => {
         " Yin is an intentional, meditative asana practice that's perfect for everyone. Its purposeful practice settles the mind, relaxes the body and releases tension. This class's floor based flow focuses on holding postures to increase flexibility and enhance joint mobility.",
       link: "/pricing",
       scrollSpeed: "3",
-      img: "../../../imgs/indexClass2.jpg",
+      img: images.yin,
     },
     {
       tileName: "Strong Vinyasa",
@@ -42,7 +45,7 @@ const IndexClass = ({ data }) => {
         "A Strong Vinyasa practice with creative dynamic flows. With the opportunity to challenge yourself a little further and deepen your practice with some arm balances and inversions. A little experience is advised however there are always options to go at your own pace and level as in every yoga class.",
       link: "/pricing",
       scrollSpeed: "1",
-      img: "../../../imgs/indexClass3.jpg",
+      img: images.strongVinyasa,
     },
     {
       tileName: "Hatha",
@@ -50,7 +53,7 @@ const IndexClass = ({ data }) => {
         "Hatha is a holistic yoga experience that focuses on posture, breath, and meditation. This class combines flowing and held postures synchronised with the breath to strengthen our body, remove blockages within our energetic system, and release mental tensions.",
       link: "/pricing",
       scrollSpeed: "3",
-      img: "../../../imgs/indexClass2.jpg",
+      img: images.hatha,
     },
     {
       tileName: "Yin Yang",
@@ -58,7 +61,7 @@ const IndexClass = ({ data }) => {
         "Yin Yang is a balance of gentle flowing movement to warm up the body and connect to your breath. Followed by cooling it down with some longer held floor based Yin postures. This class will leave you feeling balanced and centred.",
       link: "/pricing",
       scrollSpeed: "1",
-      img: "../../../imgs/indexClass3.jpg",
+      img: images.yinYang,
     },
   ]
   const svgVariants = {
@@ -97,7 +100,7 @@ const IndexClass = ({ data }) => {
             key={index}
             index={index}
             scrollSpeed={tile.scrollSpeed}
-            images={images}
+            img={tile.img}
           />
         ))}
       </div>
@@ -105,7 +108,7 @@ const IndexClass = ({ data }) => {
   )
 }
 
-const ClassTile = ({ tileName, content, index, images }) => {
+const ClassTile = ({ tileName, content, index, img }) => {
   const nameVariants = {
     initial: {
       rotate: -90,
@@ -155,7 +158,7 @@ const ClassTile = ({ tileName, content, index, images }) => {
     >
       <GatsbyImage
         className={styles.classImage}
-        image={images[index]}
+        image={img}
         alt={"Yoga pose"}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}

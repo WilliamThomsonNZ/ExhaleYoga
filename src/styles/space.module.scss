@@ -1,8 +1,23 @@
-@import "./global.scss";
 @import "./typography.css";
+@import "./global.scss";
 .pageContent {
-  padding: 0 5%;
-  margin-top: 115px;
+  .content {
+    padding: 0 8%;
+    background: #c2cfb8;
+    padding-top: 115px;
+    padding-bottom: 115px;
+  }
+  &.detailsContainer {
+    .content {
+      background: #fff;
+      p,
+      .title,
+      li {
+        color: #a98d6e;
+      }
+    }
+  }
+
   .contactButton {
     cursor: pointer;
     border: none;
@@ -22,30 +37,52 @@
       transform: rotate(-45deg);
     }
   }
+  .list {
+    margin: 0;
+    padding: 0;
+    padding-left: 8%;
+    li {
+      font-size: 16px;
+      font-family: "Arimo", sans-serif;
+      line-height: 1.7;
+      color: #fff;
+    }
+  }
   .title {
     font-family: "alia";
     font-weight: normal;
-    font-size: 26px;
+    font-size: 48px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: #fff;
   }
   p {
-    font-family: "Lato";
-    font-size: 14px;
-    letter-spacing: normal;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: "Arimo", sans-serif;
     line-height: 1.7;
   }
 }
 @include breakpoint(600px) {
   .pageContent {
     margin-top: 15vw;
+    // &:last-of-type {
+    //   margin-top: 0;
+    // }
   }
 }
 @include breakpoint($medium) {
-  .pageContainer {
-    display: flex;
-    align-items: center;
-  }
   .pageContent {
-    width: 90%;
+    display: flex;
+    &:last-of-type {
+      flex-direction: row-reverse;
+    }
+    .content {
+      max-width: 650px;
+      min-width: 500px;
+    }
     .title {
       font-size: 2rem;
     }
@@ -62,8 +99,15 @@
 }
 @include breakpoint(1500px) {
   .pageContent {
-    padding-left: 0;
-    margin-left: calc((100vw - 1500px) / 2);
+    .content {
+      padding-left: calc((100vw - 1500px) / 2);
+    }
+    &:last-of-type {
+      .content {
+        padding-left: 0;
+        padding-right: calc((100vw - 1500px) / 2);
+      }
+    }
   }
 }
 @include breakpoint($XLarge) {

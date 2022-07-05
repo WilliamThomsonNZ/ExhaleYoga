@@ -21,7 +21,7 @@ export const TeamCard = ({ name, alt, story, gatsbyImage }) => {
     animate: {
       rotate: -90,
       scale: 0.8,
-      y: -80,
+      y: -240,
       transition: {
         ease: [0.405, 0, 0.025, 1],
         duration: 0.8,
@@ -83,71 +83,94 @@ export const TeamCard = ({ name, alt, story, gatsbyImage }) => {
 const TeamSlider = ({ data }) => {
   const story =
     "The studio is influenced by the natural beauty of New Zealand. We encourage you to bring your practice to the great outdoors."
-  data.allFile.edges.reverse()
+  //data.allFile.edges.reverse()
+  console.log(data)
+  const teamPortraits = {}
+  data.forEach(element => {
+    teamPortraits[element.node.name] =
+      element.node.childImageSharp.gatsbyImageData
+  })
+  console.log(teamPortraits)
   const teamMembers = [
     <TeamCard
       name="Minnie"
       title="Yoga Teacher"
-      story={story}
+      story={
+        "Minnie creates a safe and nourishing yoga experience that invites you to explore your true essence. Through a dynamic flow, focused on the mind body connection, you are given space to return home to yourself."
+      }
       alt={"man"}
       key="1"
-      gatsbyImage={data.allFile.edges[0].node.childImageSharp.gatsbyImageData}
+      gatsbyImage={teamPortraits.minnie}
     />,
     <TeamCard
       name="Carly"
       title="Yoga Teacher"
-      story={story}
+      story={
+        "Carly brings embodied spaciousness to the experience of yin style yoga. A meditative journey into your body where you are invited to listen to the needs of your physical self and be empowered to make changes that create space for more joy, pleasure and calm in your nervous system."
+      }
       alt={"man"}
       key="2"
-      gatsbyImage={data.allFile.edges[1].node.childImageSharp.gatsbyImageData}
+      gatsbyImage={teamPortraits.carly}
     />,
     <TeamCard
       name="Helen"
       title="Yoga Teacher"
-      story={story}
+      story={
+        "Helen’s passion is teaching Juicy creative Vinyasa flows to good music. For Helen, Yoga is so much more than just a physical practice, it's a time to connect to your true soul's calling, to reset, restore and nourish your body, mind, heart and spirit."
+      }
       alt={"man"}
       key="3"
-      gatsbyImage={data.allFile.edges[2].node.childImageSharp.gatsbyImageData}
+      gatsbyImage={teamPortraits.helen}
     />,
     <TeamCard
       name="Jessie"
       title="Yoga Teacher"
-      story={story}
+      story={
+        "Jessie’s good vibes are felt from the moment you walk in and are greeted by her big, warm smile and her quirky American accent. You can expect a mindful vinyasa flow class, set to great music, that is strong, steady and usually a bit sweaty!"
+      }
       alt={"man"}
       key="4"
-      gatsbyImage={data.allFile.edges[3].node.childImageSharp.gatsbyImageData}
+      gatsbyImage={teamPortraits.jessie}
     />,
     <TeamCard
       name="Lissy"
       title="Yoga Teacher"
-      story={story}
+      story={
+        "Lissy is passionate about using Yoga and meditation as a form of Therapy ~ physically, mentally, emotionally and spiritually, as a tool to manage the daily stresses of life and as a way to simply get out of your mind and connect with yourself."
+      }
       alt={"man"}
       key="5"
-      gatsbyImage={data.allFile.edges[4].node.childImageSharp.gatsbyImageData}
+      gatsbyImage={teamPortraits.lissy}
     />,
     <TeamCard
       name="Mark"
       title="Yoga Teacher"
-      story={story}
+      story={
+        "Mark’s classes are accessible for everyone, with simple and encouraging language to allow students to experience a practice suitable to their individual needs. With Mark you can expect an authentic and nourishing yoga practice that focuses on reconnecting to yourself."
+      }
       alt={"man"}
       key="6"
-      gatsbyImage={data.allFile.edges[5].node.childImageSharp.gatsbyImageData}
+      gatsbyImage={teamPortraits.mark}
     />,
     <TeamCard
       name="Radha"
       title="Yoga Teacher"
-      story={story}
+      story={
+        "Radha bases her classes on the principle of centeredness and mindfulness, inviting an encounter with one's self, the breath and the energies of the body. This is a traditional take on yoga practice for all the layers of being, leaving one refreshed and energised for the week ahead, and at the same time settled and relaxed."
+      }
       alt={"man"}
       key="7"
-      gatsbyImage={data.allFile.edges[6].node.childImageSharp.gatsbyImageData}
+      gatsbyImage={teamPortraits.radha}
     />,
     <TeamCard
-      name="Tash"
+      name="Chris"
       title="Yoga Teacher"
-      story={story}
+      story={
+        "Chris believes yoga is about coming home to self, being present in your body without judgement, noticing what you hold onto and what needs to be let go. Chris holds a safe, secure space for you to come home to yourself and slow down to notice your body's wisdom."
+      }
       alt={"man"}
       key="7"
-      gatsbyImage={data.allFile.edges[7].node.childImageSharp.gatsbyImageData}
+      gatsbyImage={teamPortraits.chris}
     />,
   ]
   const [lastClick, setLastClick] = useState("")
@@ -160,7 +183,7 @@ const TeamSlider = ({ data }) => {
   const [scrollAmount, setScrollAmount] = useState(0)
   useEffect(() => {
     if (windowWidth < 800) {
-      setScrollAmount(240)
+      setScrollAmount(290)
     } else if (windowWidth > 800 && windowWidth < 1150) {
       setScrollAmount(290)
     } else if (windowWidth > 1150 && windowWidth < 1500) {
@@ -253,30 +276,33 @@ const TeamSlider = ({ data }) => {
     </>
   )
 }
-export default function FullTeamSlider(props) {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          allFile(filter: { relativeDirectory: { eq: "teamPortraits" } }) {
-            edges {
-              node {
-                childImageSharp {
-                  fluid {
-                    aspectRatio
-                  }
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                    layout: CONSTRAINED
-                  )
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => <TeamSlider data={data} />}
-    />
-  )
-}
+
+export default TeamSlider
+
+// export default function FullTeamSlider(props) {
+//   return (
+//     <StaticQuery
+//       query={graphql`
+//         query {
+//           allFile(filter: { relativeDirectory: { eq: "teamPortraits" } }) {
+//             edges {
+//               node {
+//                 childImageSharp {
+//                   fluid {
+//                     aspectRatio
+//                   }
+//                   gatsbyImageData(
+//                     placeholder: BLURRED
+//                     formats: [AUTO, WEBP, AVIF]
+//                     layout: CONSTRAINED
+//                   )
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       `}
+//       render={data => <TeamSlider data={data} />}
+//     />
+//   )
+// }

@@ -48,13 +48,27 @@ const Contact = ({ data }) => {
             hello@exhaleyoga.co.nz
           </a>
           <div className={styles.socialsContainer}>
-            <a className={styles.socialLink} href={"#"}>
+            <a
+              className={styles.socialLink}
+              href={"https://www.facebook.com/YinYogaNapier"}
+              target={"_blank"}
+            >
               Facebook
             </a>
-            <a className={styles.socialLink} href={"#"}>
+            <a
+              className={styles.socialLink}
+              href={"https://www.instagram.com/yinyoganapier/"}
+              target={"_blank"}
+            >
               Instagram
             </a>
-            <a className={styles.socialLink} href={"#"}>
+            <a
+              className={styles.socialLink}
+              href={
+                "https://clients.mindbodyonline.com/classic/mainclass?fl=true&tabID=101"
+              }
+              target={"_blank"}
+            >
               Mind Body
             </a>
           </div>
