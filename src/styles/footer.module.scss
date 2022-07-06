@@ -73,7 +73,8 @@
     .contactDetailsContainer {
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      gap: 50px;
+      // justify-content: space-between;
       font-family: "Poppins", sans-serif;
       font-size: 0.85rem;
       margin-top: 10vh;
@@ -200,6 +201,7 @@
         }
       }
       .contactDetailsContainer {
+        gap: 100px;
         a {
           font-size: 1rem;
           margin-bottom: 0.75rem;

@@ -8,6 +8,8 @@ import ImageSlider from "../components/global/ImageSlider/ImageSlider"
 import { motion } from "framer-motion"
 import EventSlider from "../components/global/EventSlider/EventSlider"
 import Emblem from "../components/global/Emblem"
+import { StaticImage } from "gatsby-plugin-image"
+import * as heroStyling from "../components/global/PageHero/pageHero.module.scss"
 const TimeTable = ({ data }) => {
   const heroContent =
     "Our space is avaliable to hire for functions and workshops."
@@ -22,7 +24,18 @@ const TimeTable = ({ data }) => {
       },
     },
   }
-
+  const heroTextBanner = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 1.6,
+      },
+    },
+  }
   return (
     <>
       <Helmet>
@@ -146,11 +159,38 @@ const TimeTable = ({ data }) => {
     `}</style>
       </Helmet>
       <Layout>
-        <PageHero
+        {/* <PageHero
           content={heroContent}
           page={"timetable"}
           title={"Yoga & Workshops"}
-        />
+        /> */}
+        <div className={heroStyling.pageHeroContainer}>
+          <div className={heroStyling.contentContainer}>
+            <div classsName={heroStyling.desktopBanner}>
+              <motion.span
+                className={heroStyling.title}
+                variants={heroTextBanner}
+                initial={"initial"}
+                animate={"animate"}
+              >
+                Yoga &amp; Workshops
+              </motion.span>
+            </div>
+          </div>
+          <div className={heroStyling.heroImageContainer}>
+            <StaticImage
+              src="../imgs/heroImages/timetable/main.jpg"
+              alt="Exhale yoga studio"
+              className={heroStyling.mainImage}
+              placeholder={"blurred"}
+            />
+          </div>
+          <StaticImage
+            src="../imgs/heroImages/timetable/sub.jpg"
+            alt="Exhale yoga studio"
+            className={heroStyling.subImage}
+          />
+        </div>
         <div
           className={`${styles.widgetContainer} mindbodyContainer`}
           id={"timeTableContainer"}
@@ -189,6 +229,22 @@ export const query = graphql`
         }
         eventDescription {
           eventDescription
+        }
+      }
+    }
+    timetable: allFile(
+      filter: { relativeDirectory: { eq: "heroImages/timetable" } }
+    ) {
+      edges {
+        node {
+          name
+          childImageSharp {
+            gatsbyImageData(
+              formats: [AUTO, WEBP, AVIF]
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
+          }
         }
       }
     }

@@ -88,6 +88,9 @@
 @include breakpoint(600px) {
   .pageContent {
     margin-top: 15vw;
+    .content {
+      padding-top: 0;
+    }
   }
   .detailsContainer {
     margin-top: 5vw;
@@ -98,6 +101,7 @@
     .list {
       margin: 0;
       padding: 0;
+
       padding-left: 20px;
       li {
         font-size: 18px;
@@ -144,7 +148,6 @@
 @include breakpoint($large) {
   .detailsContainer {
     display: flex;
-
     .content {
       width: 100%;
       min-width: 600px;

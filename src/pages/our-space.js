@@ -1,18 +1,55 @@
-import React, { useRef } from "react"
-import PageHero from "../components/global/PageHero/PageHero1"
+import React from "react"
+
 import Layout from "../components/global/Layout"
 import * as styles from "../styles/space.module.scss"
 import ImageSlider from "../components/global/ImageSlider/ImageSlider"
 import { StaticImage } from "gatsby-plugin-image"
 import ButtonArrow from "../components/global/ButtonArrow/ButtonArrow"
 import { Link } from "gatsby"
+import * as heroStyling from "../components/global/PageHero/pageHero.module.scss"
+import { motion } from "framer-motion"
 const OurTeam = () => {
-  const heroContent =
-    "Our space is avaliable to hire for functions and workshops."
-  const containerRef = useRef(null)
+  const heroTextBanner = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 1.6,
+      },
+    },
+  }
   return (
     <Layout>
-      <PageHero content={heroContent} page={"hireSpace"} title={"Our Space"} />
+      <div className={heroStyling.pageHeroContainer}>
+        <div className={heroStyling.contentContainer}>
+          <div classsName={heroStyling.desktopBanner}>
+            <motion.span
+              className={heroStyling.title}
+              variants={heroTextBanner}
+              initial={"initial"}
+              animate={"animate"}
+            >
+              Our Space
+            </motion.span>
+          </div>
+        </div>
+        <div className={heroStyling.heroImageContainer}>
+          <StaticImage
+            src="../imgs/heroImages/hireSpace/main.jpg"
+            alt="Exhale yoga studio"
+            className={heroStyling.mainImage}
+            placeholder={"blurred"}
+          />
+        </div>
+        <StaticImage
+          src="../imgs/heroImages/hireSpace/sub.jpg"
+          alt="Exhale yoga studio"
+          className={heroStyling.subImage}
+        />
+      </div>
       <div className={styles.pageContainer}>
         <section className={styles.pageContent}>
           <div className={styles.content}>

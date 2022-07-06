@@ -93,8 +93,6 @@ const Footer = () => {
               </a>
               <a href="https://www.instagram.com/yinyoganapier/">Instagram</a>
               <a href="https://www.facebook.com/YinYogaNapier">Facebook</a>
-            </div>
-            <div className={styles.contactLinks}>
               <a href="mailto:#">team@exhaleyoga.co.nz</a>
             </div>
           </nav>

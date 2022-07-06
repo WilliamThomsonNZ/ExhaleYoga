@@ -10,6 +10,7 @@ const MenuItem = ({
   handleMouseLeave,
   hoverIndex,
   setMenuOpen,
+  isTimetable,
 }) => {
   let isHovering =
     hoverIndex === index ? styles.isHovering : styles.isNotHovering
@@ -47,14 +48,21 @@ const MenuItem = ({
       onMouseLeave={e => handleMouseLeave(e)}
     >
       <motion.div variants={menuItem} className={styles.menuItemContent}>
-        <Link
-          to={route}
-          className={styles.menuLink}
-          onClick={() => handleClick()}
-        >
-          <span className={styles.menuItemIndex}>0{index}.</span>
-          <span className={styles.menuTitle}>{name}</span>
-        </Link>
+        {!isTimetable ? (
+          <Link
+            to={route}
+            className={styles.menuLink}
+            onClick={() => handleClick()}
+          >
+            <span className={styles.menuItemIndex}>0{index}.</span>
+            <span className={styles.menuTitle}>{name}</span>
+          </Link>
+        ) : (
+          <a href={"/time-table-events"} className={styles.menuLink}>
+            <span className={styles.menuItemIndex}>0{index}.</span>
+            <span className={styles.menuTitle}>{name}</span>
+          </a>
+        )}
       </motion.div>
     </motion.li>
   )

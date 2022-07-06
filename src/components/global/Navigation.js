@@ -46,6 +46,7 @@ const Navigation = ({ setMenuOpen }) => {
             handleMouseLeave={handleMouseLeave}
             setMenuOpen={setMenuOpen}
             hoverIndex={hoverIndex}
+            isTimetable={item.name == "Timetable/Events" ? true : false}
           />
         ))}
       </motion.ul>

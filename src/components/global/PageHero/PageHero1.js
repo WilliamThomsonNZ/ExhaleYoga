@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import AnimatedLetters from "../AnimatedLetters"
 import { StaticQuery, graphql } from "gatsby"
 
-const PageHero = ({ data, page, title }) => {
+const PageHero = ({ data, page, title, imageData }) => {
   const heroImageVariants = {
     initial: {
       y: 100,
@@ -13,6 +13,18 @@ const PageHero = ({ data, page, title }) => {
     },
     animate: {
       y: 0,
+      opacity: 1,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 1.6,
+      },
+    },
+  }
+  const heroTextBanner = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
       opacity: 1,
       transition: {
         ease: [0.6, 0.01, -0.05, 0.95],
@@ -46,7 +58,7 @@ const PageHero = ({ data, page, title }) => {
         <div classsName={styles.desktopBanner}>
           <motion.span
             className={styles.title}
-            variants={heroImageVariants}
+            variants={heroTextBanner}
             initial={"initial"}
             animate={"animate"}
           >
@@ -61,26 +73,26 @@ const PageHero = ({ data, page, title }) => {
         </div> */}
       </div>
       <div className={styles.heroImageContainer}>
-        <motion.div
+        {/* <motion.div
           variants={heroImageVariants}
           initial={"initial"}
           animate={"animate"}
-        >
-          <GatsbyImage
-            image={
-              imagesObject.edges[0].node.name == "main"
-                ? imagesObject.edges[0].node.childImageSharp.gatsbyImageData
-                : imagesObject.edges[1].node.childImageSharp.gatsbyImageData
-            }
-            alt="Exhale yoga studio"
-            className={styles.mainImage}
-            placeholder="none"
-          />
-        </motion.div>
+        > */}
+        <GatsbyImage
+          image={
+            imagesObject.edges[0].node.name === "main"
+              ? imagesObject.edges[0].node.childImageSharp.gatsbyImageData
+              : imagesObject.edges[1].node.childImageSharp.gatsbyImageData
+          }
+          alt="Exhale yoga studio"
+          className={styles.mainImage}
+          placeholder={"blurred"}
+        />
+        {/* </motion.div> */}
       </div>
       <GatsbyImage
         image={
-          imagesObject.edges[0].node.name != "main"
+          imagesObject.edges[0].node.name !== "main"
             ? imagesObject.edges[0].node.childImageSharp.gatsbyImageData
             : imagesObject.edges[1].node.childImageSharp.gatsbyImageData
         }
@@ -91,6 +103,7 @@ const PageHero = ({ data, page, title }) => {
   )
 }
 
+// export default PageHero
 export default function Hero(props) {
   return (
     <StaticQuery
@@ -104,7 +117,7 @@ export default function Hero(props) {
                 name
                 childImageSharp {
                   gatsbyImageData(
-                    formats: WEBP
+                    formats: [AUTO, WEBP, AVIF]
                     layout: CONSTRAINED
                     placeholder: BLURRED
                   )
@@ -120,7 +133,7 @@ export default function Hero(props) {
                 name
                 childImageSharp {
                   gatsbyImageData(
-                    formats: WEBP
+                    formats: [AUTO, WEBP, AVIF]
                     layout: CONSTRAINED
                     placeholder: BLURRED
                   )
@@ -136,7 +149,7 @@ export default function Hero(props) {
                 name
                 childImageSharp {
                   gatsbyImageData(
-                    formats: WEBP
+                    formats: [AUTO, WEBP, AVIF]
                     layout: CONSTRAINED
                     placeholder: BLURRED
                   )
@@ -152,7 +165,7 @@ export default function Hero(props) {
                 name
                 childImageSharp {
                   gatsbyImageData(
-                    formats: WEBP
+                    formats: [AUTO, WEBP, AVIF]
                     layout: CONSTRAINED
                     placeholder: BLURRED
                   )
@@ -167,11 +180,7 @@ export default function Hero(props) {
               node {
                 name
                 childImageSharp {
-                  gatsbyImageData(
-                    formats: WEBP
-                    layout: CONSTRAINED
-                    placeholder: BLURRED
-                  )
+                  gatsbyImageData(layout: CONSTRAINED)
                 }
               }
             }
