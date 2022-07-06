@@ -28,16 +28,15 @@ const OurTeam = () => {
               love to chat.
             </p>
             <Link to={"/contact-us"}>
-              <ButtonArrow label={"Hire Our Space"} isWhite />
+              <ButtonArrow label={"Hire Our Space"} />
             </Link>
           </div>
-          <StaticImage
-            src="../imgs/siteImages/pricingTable.jpg"
-            alt={"Exhale Yoga Studio"}
-            className={styles.pricingTableImage}
-          />
         </section>
-        <section className={`${styles.pageContent} ${styles.detailsContainer}`}>
+        <section className={styles.detailsContainer}>
+          <StaticImage
+            src="../imgs/siteImages/hireSpaceContent.jpg"
+            alt={"Exhale Yoga Studio"}
+          />
           <div className={styles.content}>
             <h2 className={styles.title}>Our space:</h2>
             <ul className={styles.list}>
@@ -53,14 +52,9 @@ const OurTeam = () => {
               For all hire enquiries and price lists please email us directly.{" "}
             </p>
             <Link to={"/contact-us"}>
-              <ButtonArrow label={"Get in touch"} />
+              <ButtonArrow label={"Get in touch"} isWhite />
             </Link>
           </div>
-          <StaticImage
-            src="../imgs/siteImages/pricingTable.jpg"
-            alt={"Exhale Yoga Studio"}
-            className={styles.pricingTableImage}
-          />
         </section>
       </div>
       <ImageSlider />

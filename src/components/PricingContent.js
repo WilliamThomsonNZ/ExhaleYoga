@@ -6,7 +6,7 @@ import useWindowWidth from "../utils/hooks/useWindowWidth"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import ButtonArrow from "./global/ButtonArrow/ButtonArrow"
-
+import { Link } from "gatsby"
 const PricingContent = () => {
   const width = useWindowWidth(200)
   return (
@@ -23,13 +23,15 @@ const PricingContent = () => {
             create an account in Mindbody, book your first class and select the
             intro offer or come into the studio to sign up.
           </p>
-          <ButtonArrow label={"Book now"} isWhite />
+          <a href={"time-table-events/"}>
+            <ButtonArrow label={"Book now"} isWhite />
+          </a>
         </div>
         <StaticImage
           src="../imgs/siteImages/introOffer.jpg"
           alt={"Exhale Yoga Studio"}
           placeholder={"blurred"}
-          className={styles.pricingImage}
+          // className={styles.pricingImage}
         />
       </section>
       <section className={styles.membershipContainer}>
@@ -42,7 +44,9 @@ const PricingContent = () => {
               create an account, book your first class and select the one month
               membership or come into the studio to purchase.
             </p>
-            <ButtonArrow label={"Book now"} />
+            <a href={"time-table-events/"}>
+              <ButtonArrow label={"Book now"} />
+            </a>
           </div>
           <div className={styles.membership}>
             <h6 className={styles.membershipTitle}>Three month membership:</h6>
@@ -51,7 +55,9 @@ const PricingContent = () => {
               create an account, book your first class and select the three
               month membership or come into the studio to purchase.
             </p>
-            <ButtonArrow label={"Book now"} />
+            <a href={"time-table-events/"}>
+              <ButtonArrow label={"Book now"} />
+            </a>
           </div>
         </div>
       </section>
@@ -59,9 +65,6 @@ const PricingContent = () => {
         <StaticImage
           src="../imgs/siteImages/pricingTable.jpg"
           alt={"Exhale Yoga Studio"}
-          className={styles.pricingTableImage}
-          data-scroll
-          data-scroll-speed="2"
         />
         <div className={styles.tableContent}>
           <h6 className={styles.pricingTitle}>Pricing</h6>
@@ -85,7 +88,9 @@ const PricingContent = () => {
               <span>$10.00</span>
             </li>
           </ul>
-          <ButtonArrow label={"Book now"} isWhite />
+          <a href={"time-table-events/"}>
+            <ButtonArrow label={"Book now"} isWhite />
+          </a>
         </div>
       </section>
     </>

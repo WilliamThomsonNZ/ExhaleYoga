@@ -18,7 +18,7 @@
     }
     .logoText {
       display: block;
-      font-family: "Lato";
+      font-family: "poppins";
       font-size: 12px;
       letter-spacing: 3px;
       margin-left: 10px;
@@ -48,7 +48,7 @@
         width: 100%;
         padding: 0.5rem 0;
         position: relative;
-        font-family: "Lato";
+        font-family: "Poppins", sans-serif;
         font-size: 16px;
         line-height: 1.9;
         color: #fff;
@@ -74,7 +74,7 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
-      font-family: "Lato";
+      font-family: "Poppins", sans-serif;
       font-size: 0.85rem;
       margin-top: 10vh;
       margin-bottom: 10vh;
@@ -94,7 +94,7 @@
       }
     }
     .copyContainer {
-      font-family: "Lato";
+      font-family: "Poppins", sans-serif;
       font-weight: 500;
       font-size: 0.85rem;
       .copyText {
