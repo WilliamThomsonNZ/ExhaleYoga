@@ -1,10 +1,9 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import { motion } from "framer-motion"
+
 import * as styles from "../styles/pricing.module.scss"
 import useWindowWidth from "../utils/hooks/useWindowWidth"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+
 import ButtonArrow from "./global/ButtonArrow/ButtonArrow"
 import { Link } from "gatsby"
 const PricingContent = () => {
@@ -23,7 +22,7 @@ const PricingContent = () => {
             create an account in Mindbody, book your first class and select the
             intro offer or come into the studio to sign up.
           </p>
-          <a href={"time-table-events/"}>
+          <a href={`${window.location.origin}/time-table-events/`}>
             <ButtonArrow label={"Book now"} isWhite />
           </a>
         </div>
@@ -44,7 +43,7 @@ const PricingContent = () => {
               create an account, book your first class and select the one month
               membership or come into the studio to purchase.
             </p>
-            <a href={"time-table-events/"}>
+            <a href={`${window.location.origin}/time-table-events/`}>
               <ButtonArrow label={"Book now"} />
             </a>
           </div>
@@ -55,7 +54,7 @@ const PricingContent = () => {
               create an account, book your first class and select the three
               month membership or come into the studio to purchase.
             </p>
-            <a href={"time-table-events/"}>
+            <a href={`${window.location.origin}/time-table-events/`}>
               <ButtonArrow label={"Book now"} />
             </a>
           </div>
@@ -88,7 +87,7 @@ const PricingContent = () => {
               <span>$10.00</span>
             </li>
           </ul>
-          <a href={"time-table-events/"}>
+          <a href={`${window.location.origin}/time-table-events/`}>
             <ButtonArrow label={"Book now"} isWhite />
           </a>
         </div>

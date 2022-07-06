@@ -83,31 +83,48 @@ const Footer = () => {
               <Link to="/our-space">Hire our space</Link>
               <a href="/time-table-events">Timetable &amp; Events</a>
               <Link to="/pricing">Pricing</Link>
-              <Link to="/our-team">Meet the team</Link>
+              <Link to="/our-team">Team</Link>
               <Link to="/gallery">Gallery</Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact-us">Contact</Link>
             </div>
             <div className={styles.externalLinks}>
-              <a href="https://cart.mindbodyonline.com/sites/7709/session/new">
+              <a
+                href="https://cart.mindbodyonline.com/sites/7709/session/new"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Mind Body
               </a>
-              <a href="https://www.instagram.com/yinyoganapier/">Instagram</a>
-              <a href="https://www.facebook.com/YinYogaNapier">Facebook</a>
-              <a href="mailto:#">team@exhaleyoga.co.nz</a>
+              <a
+                href="https://www.instagram.com/yinyoganapier/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.facebook.com/YinYogaNapier"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Facebook
+              </a>
+              <a href="mailto:studio@exhaleyoga.co.nz">
+                studio@exhaleyoga.co.nz
+              </a>
             </div>
           </nav>
           <div className={styles.copyContainer}>
             <div className={styles.siteCreators}>
               <span>
-                Photographs by{" "}
-                <a className={styles.creatorLink} href="#">
-                  Erin Fleming
-                </a>
-              </span>
-              <span>
-                Site by{" "}
-                <a className={styles.creatorLink} href="#">
-                  Will
+                Site &amp; Photography by{" "}
+                <a
+                  className={styles.creatorLink}
+                  href="https://basik.co.nz"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  basik
                 </a>
               </span>
             </div>
