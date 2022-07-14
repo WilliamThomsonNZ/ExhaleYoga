@@ -4,12 +4,13 @@ import Layout from "../components/global/Layout"
 import * as styles from "../styles/team.module.scss"
 import * as heroStyling from "../components/global/PageHero/pageHero.module.scss"
 import TeamSlider from "../components/global/TeamSlider/TeamSlider"
-import { LocomotiveScrollProvider } from "react-locomotive-scroll"
+
 import { StaticImage } from "gatsby-plugin-image"
 import Footer from "../components/global/Footer"
 import Emblem from "../components/global/Emblem"
 import { motion } from "framer-motion"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 const OurTeam = ({ data }) => {
   const heroContent =
     "Our space is avaliable to hire for functions and workshops."
@@ -47,6 +48,16 @@ const OurTeam = ({ data }) => {
   }
   return (
     <Layout>
+      <Helmet>
+        <title>Exhale - Team</title>
+        <meta
+          name="description"
+          content="We are an urban sanctuary in the heart of Napier that puts you
+                and your wellbeing first. We offer yoga classes, workshops and
+                space hire. We are your space to breathe."
+        />
+        <link rel="icon" href="../imgs/emblem.png" />
+      </Helmet>
       {/* <PageHero content={heroContent} page={"team"} title={"Our Teachers"} /> */}
       <div className={heroStyling.pageHeroContainer}>
         <div className={heroStyling.contentContainer}>

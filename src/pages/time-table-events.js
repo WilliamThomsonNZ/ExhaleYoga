@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useEffect } from "react"
 import PageHero from "../components/global/PageHero/PageHero1"
 import Layout from "../components/global/Layout"
 import * as styles from "../styles/timetable.module.scss"
@@ -36,14 +36,24 @@ const TimeTable = ({ data }) => {
       },
     },
   }
+
+  useEffect(() => {
+    const script = document.createElement("script")
+    script.src = "https://widgets.mindbodyonline.com/javascripts/healcode.js"
+    script.async = true
+    document.body.appendChild(script)
+  }, [])
   return (
     <>
       <Helmet>
-        <script
-          src="https://widgets.mindbodyonline.com/javascripts/healcode.js"
-          type="text/javascript"
-          async
-        ></script>
+        <title>Exhale - Timetable &amp; Events</title>
+        <meta
+          name="description"
+          content="We are an urban sanctuary in the heart of Napier that puts you
+                and your wellbeing first. We offer yoga classes, workshops and
+                space hire. We are your space to breathe."
+        />
+        <link rel="icon" href="../imgs/emblem.png" />
         <script
           type="text/javascript"
           src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
@@ -210,7 +220,8 @@ const TimeTable = ({ data }) => {
           </p> */}
           <Emblem label={"View our latest events below"} isWhite />
         </section>
-        <EventSlider data={data} />
+        <span className={styles.noEvents}>Event information coming soon.</span>
+        {/* <EventSlider data={data} /> */}
         <ImageSlider />
       </Layout>
     </>
@@ -221,17 +232,6 @@ export default TimeTable
 
 export const query = graphql`
   query timetableQuery {
-    allContentfulEvent {
-      nodes {
-        eventName
-        eventImage {
-          gatsbyImageData
-        }
-        eventDescription {
-          eventDescription
-        }
-      }
-    }
     timetable: allFile(
       filter: { relativeDirectory: { eq: "heroImages/timetable" } }
     ) {
@@ -250,3 +250,35 @@ export const query = graphql`
     }
   }
 `
+
+// export const query = graphql`
+//   query timetableQuery {
+//     allContentfulEvent {
+//       nodes {
+//         eventName
+//         eventImage {
+//           gatsbyImageData
+//         }
+//         eventDescription {
+//           eventDescription
+//         }
+//       }
+//     }
+//     timetable: allFile(
+//       filter: { relativeDirectory: { eq: "heroImages/timetable" } }
+//     ) {
+//       edges {
+//         node {
+//           name
+//           childImageSharp {
+//             gatsbyImageData(
+//               formats: [AUTO, WEBP, AVIF]
+//               layout: CONSTRAINED
+//               placeholder: BLURRED
+//             )
+//           }
+//         }
+//       }
+//     }
+//   }
+// `

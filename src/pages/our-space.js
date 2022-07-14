@@ -8,6 +8,7 @@ import ButtonArrow from "../components/global/ButtonArrow/ButtonArrow"
 import { Link } from "gatsby"
 import * as heroStyling from "../components/global/PageHero/pageHero.module.scss"
 import { motion } from "framer-motion"
+import { Helmet } from "react-helmet"
 const OurTeam = () => {
   const heroTextBanner = {
     initial: {
@@ -23,6 +24,16 @@ const OurTeam = () => {
   }
   return (
     <Layout>
+      <Helmet>
+        <title>Exhale - Our Space</title>
+        <meta
+          name="description"
+          content="We are an urban sanctuary in the heart of Napier that puts you
+                and your wellbeing first. We offer yoga classes, workshops and
+                space hire. We are your space to breathe."
+        />
+        <link rel="icon" href="../imgs/emblem.png" />
+      </Helmet>
       <div className={heroStyling.pageHeroContainer}>
         <div className={heroStyling.contentContainer}>
           <div classsName={heroStyling.desktopBanner}>

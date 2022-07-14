@@ -3,20 +3,16 @@ import PageHero from "../components/global/PageHero/PageHero1"
 import Layout from "../components/global/Layout"
 import * as styles from "../styles/pricing.module.scss"
 import * as heroStyling from "../components/global/PageHero/pageHero.module.scss"
-import { LocomotiveScrollProvider } from "react-locomotive-scroll"
+
 import { motion } from "framer-motion"
 import ImageSlider from "../components/global/ImageSlider/ImageSlider"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import PricingContent from "../components/PricingContent"
 import Footer from "../components/global/Footer"
+import { Helmet } from "react-helmet"
 
 const Pricing = ({ data }) => {
-  console.log(data)
-  const heroContent =
-    "Our space is avaliable to hire for functions and workshops."
-  const containerRef = useRef(null)
-
   const heroTextBanner = {
     initial: {
       opacity: 0,
@@ -36,6 +32,16 @@ const Pricing = ({ data }) => {
         page={"pricing"}
         title={"Invest in you"}
       /> */}
+      <Helmet>
+        <title>Exhale - Pricing</title>
+        <meta
+          name="description"
+          content="We are an urban sanctuary in the heart of Napier that puts you
+                and your wellbeing first. We offer yoga classes, workshops and
+                space hire. We are your space to breathe."
+        />
+        <link rel="icon" href="../imgs/emblem.png" />
+      </Helmet>
       <div className={heroStyling.pageHeroContainer}>
         <div className={heroStyling.contentContainer}>
           <div classsName={heroStyling.desktopBanner}>

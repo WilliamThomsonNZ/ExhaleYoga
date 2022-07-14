@@ -54,7 +54,7 @@ const ImageSlider = ({ data }) => {
     const imageWidth = node.node.childImageSharp.gatsbyImageData.width
     const imageHeight = node.node.childImageSharp.gatsbyImageData.height
     return (
-      <div className={styles.imageOuter}>
+      <div className={styles.imageOuter} key={"index" + index}>
         <motion.div
           variants={imageHover}
           animate={isHovering ? "startHover" : "stopHover"}

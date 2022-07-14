@@ -2,7 +2,7 @@
 // import PageHero from "../components/global/PageHero/PageHero1"
 // import Layout from "../components/global/Layout"
 // import * as styles from "../styles/team.module.scss"
-// import { LocomotiveScrollProvider } from "react-locomotive-scroll"
+
 // import EventSlider from "../components/global/EventSlider/EventSlider"
 // import { graphql } from "gatsby"
 // import { motion } from "framer-motion"

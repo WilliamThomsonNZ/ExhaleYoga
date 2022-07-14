@@ -4,6 +4,7 @@ import AnimatedLetters from "../components/global/AnimatedLetters"
 import * as styles from "../styles/contact.module.scss"
 import ButtonArrow from "../components/global/ButtonArrow/ButtonArrow"
 import { StaticImage } from "gatsby-plugin-image"
+import { Helmet } from "react-helmet"
 const Contact = ({ data }) => {
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
@@ -35,6 +36,16 @@ const Contact = ({ data }) => {
   }
   return (
     <Layout>
+      <Helmet>
+        <title>Exhale - Contact</title>
+        <meta
+          name="description"
+          content="We are an urban sanctuary in the heart of Napier that puts you
+                and your wellbeing first. We offer yoga classes, workshops and
+                space hire. We are your space to breathe."
+        />
+        <link rel="icon" href="../imgs/emblem.png" />
+      </Helmet>
       <main className={styles.container}>
         <section className={styles.contactContainer}>
           <h1 className={styles.heading}>

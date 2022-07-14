@@ -9,10 +9,8 @@ import Emblem from "../Emblem"
 const IndexClass = ({ data }) => {
   const images = {}
   data.class.edges.forEach(node => {
-    console.log(node)
     images[node.node.name] = node.node.childImageSharp.gatsbyImageData
   })
-  console.log(data)
   console.log(images)
   const classes = [
     {
@@ -53,7 +51,7 @@ const IndexClass = ({ data }) => {
         "Hatha is a holistic yoga experience that focuses on posture, breath, and meditation. This class combines flowing and held postures synchronised with the breath to strengthen our body, remove blockages within our energetic system, and release mental tensions.",
       link: "/pricing",
       scrollSpeed: "3",
-      img: images.hatha,
+      img: images.ha,
     },
     {
       tileName: "Yin Yang",
@@ -61,7 +59,7 @@ const IndexClass = ({ data }) => {
         "Yin Yang is a balance of gentle flowing movement to warm up the body and connect to your breath. Followed by cooling it down with some longer held floor based Yin postures. This class will leave you feeling balanced and centred.",
       link: "/pricing",
       scrollSpeed: "1",
-      img: images.yinYang,
+      img: images.yinY,
     },
   ]
   const svgVariants = {
@@ -74,13 +72,7 @@ const IndexClass = ({ data }) => {
       },
     },
   }
-  const [offsetY, setOffsetY] = useState(0)
-  const handleScroll = () => setOffsetY(window.pageYOffset)
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-  console.log(data)
+
   return (
     <section className={styles.container}>
       <p className={styles.textContent}>

@@ -71,7 +71,7 @@ const Hero = () => {
       <div className={styles.heroContainer}>
         <div className={styles.heroTextContainer}>
           <h1 className={styles.heroMainText}>
-            <div classsName={styles.desktopBanner}>
+            <div className={styles.desktopBanner}>
               <motion.span
                 className={styles.title}
                 variants={heroTextBanner}

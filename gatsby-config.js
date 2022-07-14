@@ -9,8 +9,13 @@ require("dotenv").config({
 module.exports = {
   /* Your site config here */
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: "src/imgs/emblem.png",
+      },
+    },
     `gatsby-plugin-sass`,
-    `gatsby-plugin-anchor-links`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

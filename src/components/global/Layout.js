@@ -5,7 +5,7 @@ import Footer from "./Footer"
 import { AnimatePresence, motion } from "framer-motion"
 import Menu from "../global/Menu"
 import { Helmet } from "react-helmet"
-import { LocomotiveScrollProvider } from "react-locomotive-scroll"
+
 const Layout = ({ children }) => {
   const variants = {
     initial: {

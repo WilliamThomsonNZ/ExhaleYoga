@@ -7,6 +7,15 @@
   padding: 0 8%;
   color: #a98d6e;
 }
+.noEvents {
+  background: #c2cfb8;
+  text-align: center;
+  display: block;
+  padding-top: 115px;
+  padding-bottom: 115px;
+  font-family: Arimo;
+  color: #fff;
+}
 @include breakpoint(600px) {
   .widgetContainer {
     margin-top: 15vw;

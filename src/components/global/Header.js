@@ -8,7 +8,7 @@ import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import MenuToggle from "./MenuToggle"
 import { StaticImage } from "gatsby-plugin-image"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
+
 const Header = ({ handleMenuToggle, menuOpen }) => {
   const headerVariants = {
     initial: { opacity: 0, y: -50 },

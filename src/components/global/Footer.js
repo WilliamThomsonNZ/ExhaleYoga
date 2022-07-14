@@ -49,7 +49,7 @@ const Footer = () => {
             />
           </Link>
           <span className={styles.desktopCopyText}>
-            All rights reserved © Exhale Yoga 2021
+            All rights reserved © Exhale Yoga 2022
           </span>
         </div>
         <div className={styles.contactContainer}>

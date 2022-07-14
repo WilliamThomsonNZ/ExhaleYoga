@@ -8,6 +8,10 @@ import ButtonArrow from "./global/ButtonArrow/ButtonArrow"
 import { Link } from "gatsby"
 const PricingContent = () => {
   const width = useWindowWidth(200)
+  let origin = ""
+  if (typeof window !== "undefined") {
+    origin = window.location.origin
+  }
   return (
     <>
       <section className={styles.introOfferContainer} id={"introOffer"}>
@@ -22,7 +26,7 @@ const PricingContent = () => {
             create an account in Mindbody, book your first class and select the
             intro offer or come into the studio to sign up.
           </p>
-          <a href={`${window.location.origin}/time-table-events/`}>
+          <a href={`${origin}/time-table-events/`}>
             <ButtonArrow label={"Book now"} isWhite />
           </a>
         </div>
@@ -43,7 +47,7 @@ const PricingContent = () => {
               create an account, book your first class and select the one month
               membership or come into the studio to purchase.
             </p>
-            <a href={`${window.location.origin}/time-table-events/`}>
+            <a href={`${origin}/time-table-events/`}>
               <ButtonArrow label={"Book now"} />
             </a>
           </div>
@@ -54,7 +58,7 @@ const PricingContent = () => {
               create an account, book your first class and select the three
               month membership or come into the studio to purchase.
             </p>
-            <a href={`${window.location.origin}/time-table-events/`}>
+            <a href={`${origin}/time-table-events/`}>
               <ButtonArrow label={"Book now"} />
             </a>
           </div>
@@ -87,7 +91,7 @@ const PricingContent = () => {
               <span>$10.00</span>
             </li>
           </ul>
-          <a href={`${window.location.origin}/time-table-events/`}>
+          <a href={`${origin}/time-table-events/`}>
             <ButtonArrow label={"Book now"} isWhite />
           </a>
         </div>
